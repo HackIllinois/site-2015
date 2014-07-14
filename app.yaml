@@ -1,0 +1,50 @@
+#https://developers.google.com/appengine/docs/python/config/appconfig
+# There's no need to change this app ID anymore to push to dev! See the "Git Deploy Setup Guide" in README.md
+# Again: DO NOT CHANGE THIS APP ID FROM "hackillinois"
+application: hackillinois
+version: 2-0-0
+runtime: python27
+api_version: 1
+threadsafe: yes
+default_expiration: "10m"
+
+handlers:
+
+#not used yet
+#- url: /favicon\.ico
+#  static_files: assets/img/favicon.ico
+#  upload: assets/img/favicon\.ico
+
+- url: /robots.txt
+  static_files: robots.txt
+  upload: robots\.txt
+  
+- url: /css
+  static_dir: css
+  
+- url: /js
+  static_dir: js
+  
+- url: /assets
+  static_dir: assets
+
+# https://developers.google.com/appengine/articles/python/recording_exceptions_with_ereporter
+- url: /_ereporter.*
+  script: google.appengine.ext.ereporter.report_generator.application
+  login: admin
+  
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+
+- name: jinja2
+  version: "2.6"
+
+# https://developers.google.com/appengine/docs/python/tools/appstats?csw=1
+builtins:
+- appstats: on
+- remote_api: on
+- deferred: on
