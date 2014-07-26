@@ -2,9 +2,8 @@ import os
 import jinja2
 import webapp2
 from google.appengine.ext import ereporter
-import logging
 
-template_dir = os.path.dirname(__file__)
+template_dir = os.path.join(os.path.dirname(__file__), os.pardir)
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
 jinja_env.filters.update({'is_list':lambda l: isinstance(l, list)})
 
@@ -12,11 +11,14 @@ jinja_env.filters.update({'is_list':lambda l: isinstance(l, list)})
 ereporter.register_logger()
 
 
-class handler(webapp2.RequestHandler):
-    """ Someone should fill in what this is """
+class BaseHandler(webapp2.RequestHandler):
+    """ This is the Base Handler
+        This is the parent of every other handler
+        Most other handlers use functions defined in this hander
+        This handler is the child of webapp2.RequestHandler which is pre-defined by webapp2"""
 
     def __init__(self, request, response):
-        super(handler, self).__init__(request, response)
+        super(BaseHandler, self).__init__(request, response)
 
     def write(self, *a, **kw):
         self.response.out.write(*a, **kw)
@@ -29,3 +31,4 @@ class handler(webapp2.RequestHandler):
         page = t.render(params)
 
         return page
+		

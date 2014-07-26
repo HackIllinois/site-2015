@@ -1,5 +1,4 @@
 from google.appengine.ext import ndb
-import logging
 
 class Model(ndb.Model):
     @classmethod
@@ -13,3 +12,4 @@ class Model(ndb.Model):
         ret = o.put()
 		
         return o
+		

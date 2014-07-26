@@ -2,20 +2,20 @@ import sys
 import os
 
 # Include third party libraries
-third_party = os.path.join(os.path.dirname(__file__), 'third_party')
-sys.path.append(third_party)
+#third_party = os.path.join(os.path.dirname(__file__), 'third_party')
+#sys.path.append(third_party)
 
 # Include tropo so we can just import tropo
-sys.path.append(os.path.join(third_party, 'tropo-webapi-python'))
+#sys.path.append(os.path.join(third_party, 'tropo-webapi-python'))
 
 # Include cloudstorage for resume upload
-sys.path.append(os.path.join(third_party, 'cloudstorage'))
+#sys.path.append(os.path.join(third_party, 'cloudstorage'))
 
 # Include requests for ease-of-use while integrating with SendGrid
-sys.path.append(os.path.join(third_party, 'requests'))
+#sys.path.append(os.path.join(third_party, 'requests'))
 
 # Include twilio
-sys.path.append(os.path.join(third_party, 'twilio'))
+#sys.path.append(os.path.join(third_party, 'twilio'))
 
 # Include sources for google drive api
 # Reference: https://developers.google.com/api-client-library/python/start/installation#appengine
