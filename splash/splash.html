@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+        <title>HackIllinois</title>
+        
+        <link rel="stylesheet" type="text/css" href="css/fonts.css">
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+        
+        <link rel="stylesheet" media="screen and (min-device-width: 500px)" href="css/desktop.css" />
+        <link rel="stylesheet" media="screen and (max-device-width: 500px)" href="css/mobile.css" />
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.backstretch.min.js"></script>
+
+    </head>
+    <body>
+        <div class="background bg-gradient">
+            <div class="background bg-land">
+            </div>
+        </div>
+        <div id="waves-container">
+            <ul id="scene">
+                <li class="layer" data-depth="0.2"><object id="waves" type="image/svg+xml" data="resources/map_wave_outlines.svg"></object></li>
+            </ul>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="js/parallax.min.js"></script>
+        <script>
+
+        // Pretty simple huh?
+        var scene = document.getElementById('scene');
+        var parallax = new Parallax(scene);
+
+        </script>
+
+        <div id="content-container">
+            <div class="content">
+                <object type="image/svg+xml" data="resources/hackillinois_logo_gotham.svg">HACK ILLINOIS</object>
+
+                <p class="upper tag">Find your internet explorer</p>
+                <p class="date">Feb 27 - Mar 1</p>
+
+                <form>
+                    <p>Be the first to know when the expedition starts</p>
+                    <input type="text" placeholder="future-explorer@arctic.com">
+                    <button type="button">Submit</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $(window).resize(function () {
+                    // Get aspect ratio of window
+                    var aspectRatio = $(this).width() / $(this).height();
+
+                    if (aspectRatio > 1) {
+                        // Page is horizontal
+                        $("#waves").css({
+                            width: "120%",
+                            height: "auto"
+                        });
+                    } else if (aspectRatio < 1) {
+                        // Page is verticle
+                        $("#waves").css({
+                            height: "120%",
+                            width: "auto"
+                        });
+                    }
+                });
+            });
+        </script> 
+    </body>
+</html>

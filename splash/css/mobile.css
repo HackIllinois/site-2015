@@ -1,0 +1,19 @@
+.tag {
+    color: red;
+}
+
+.content object {
+    position: relative;
+}
+
+.content form input {
+    width: 90%;
+    height: 42px;
+    font-size: 27px;
+}
+
+.content form button {
+    width: 90%;
+    height: 42px;
+    font-size: 29px;
+}
