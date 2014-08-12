@@ -1,0 +1,152 @@
+body, p, ul, li, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #598ec5;
+    overflow: hidden;
+}
+
+.background {
+    height: 100%;
+    width: 100%;    
+}
+
+.bg-gradient {
+    background: url(../assets/map_gradient_bg.svg) no-repeat center center fixed;
+    background-size: cover;
+
+    position: absolute;
+    z-index: -2;
+
+    top: 0;
+}
+
+.bg-waves {
+    background: url(../assets/map_wave_outlines.svg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.bg-land {
+    background: url(../assets/land_with_details_2000.png) no-repeat center center fixed;
+    background-size: cover;
+    z-index: 0;
+}
+
+#waves-container {
+    position: absolute;
+    height: 120%;
+    width: 120%;
+    
+    left: -10%;
+    top: -10%;
+
+    z-index: -1;
+}
+
+
+#scene li object {
+    width: auto;
+    height: 120%;
+}
+
+#content-container {
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: auto;
+
+    text-align: center;
+    color: white;
+}
+
+.content object {
+    width: 88px;
+    height: 90px;
+}
+
+.tag {
+
+    font-family: 'BrandonBlack';
+    font-size: 26px;
+    color: #fff;
+}
+
+.date {
+    font-family: 'BrandonBold';
+    font-size: 20px;
+    color: #727f84;
+}
+
+.content form {
+    font-family: 'BrandonReg';
+}
+
+.content form p {
+    font-size: 14px;
+    color: #406072;
+    margin-bottom: 5px;
+}
+
+.content form input {
+    background-color: rgba(23, 54, 86, .5);
+    color: #fff;
+    font-size: 16px;
+    font-family: 'BrandonReg';
+
+    border: none;
+    border-radius: 4px;
+
+    padding-left: 14px;
+
+    transition:.1s linear;
+    -webkit-transition:.1s linear;
+    -moz-transition:.1s linear;
+}
+
+.content form input:focus {
+    outline: none;
+    box-shadow: 0px 0px 7px #fff;
+    border-color: #fff;
+}
+
+.content form button {
+    background-color: rgba(0, 113, 188, .85);
+    color: #fff;
+    font-size: 16px;
+    font-family: 'BrandonReg';
+
+    border: none;
+    outline: none;
+    border-radius: 4px;
+
+    cursor: pointer;
+    cursor: hand;
+}
+
+.content form button:hover {
+    background-color: rgba(0, 113, 188, 0);
+    border: 2px dashed rgba(0, 113, 188, .85);
+    color: #0071bc;
+}
+
+::-webkit-input-placeholder { color:#b3b3b3; }
+::-moz-placeholder { color:#b3b3b3; } /* firefox 19+ */
+:-ms-input-placeholder { color:#b3b3b3; } /* ie */
+input:-moz-placeholder { color:#b3b3b3; }
+
+/* Misc stying classes */
+.clear:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.upper {
+    text-transform: uppercase;
+}

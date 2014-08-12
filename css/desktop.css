@@ -1,0 +1,23 @@
+.tag {
+    margin-top: 83px;
+}
+
+.content {
+    width: 500px;
+    height:420px;
+}
+
+.content form {
+    margin-top: 65px;
+}
+
+.content form input {
+    width: 350px;
+    height: 35px;
+}
+
+.content form button {
+    margin-left: 4px;
+    width: 110px;
+    height: 35px;
+}

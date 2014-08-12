@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'BrandonReg';
+    src: url('../assets/typefaces/BrandonGrotesque/Brandon_reg.eot');
+    src: url('../assets/typefaces/BrandonGrotesque/Brandon_reg.eot?#iefix') format('embedded-opentype'),
+         url('../assets/typefaces/BrandonGrotesque/Brandon_reg.woff') format('woff'),
+         url('../assets/typefaces/BrandonGrotesque/Brandon_reg.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BrandonBlack';
+    src: url('../assets/typefaces/BrandonGrotesque/Brandon_blk.eot');
+    src: url('../assets/typefaces/BrandonGrotesque/Brandon_blk.eot?#iefix') format('embedded-opentype'),
+         url('../assets/typefaces/BrandonGrotesque/Brandon_blk.woff') format('woff'),
+         url('../assets/typefaces/BrandonGrotesque/Brandon_blk.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BrandonBold';
+    src: url('../assets/typefaces/BrandonGrotesque/Brandon_bld.eot');
+    src: url('../assets/typefaces/BrandonGrotesque/Brandon_bld.eot?#iefix') format('embedded-opentype'),
+         url('../assets/typefaces/BrandonGrotesque/Brandon_bld.woff') format('woff'),
+         url('../assets/typefaces/BrandonGrotesque/Brandon_bld.ttf') format('truetype');
+}
