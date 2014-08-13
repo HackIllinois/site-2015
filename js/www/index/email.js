@@ -1,10 +1,6 @@
 function validateEmail() {
     var re = new RegExp("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$")
-    if ($("#email").val().match(re)){
-        return true;
-    } else {
-        return false;
-    }
+    return ($("#email").val().match(re));
 }
 
 $(document).ready(function () {
