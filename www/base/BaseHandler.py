@@ -7,7 +7,7 @@ template_dir = os.path.join(os.path.dirname(__file__), os.pardir)
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
 jinja_env.filters.update({'is_list':lambda l: isinstance(l, list)})
 
-# https://developers.google.com/appengine/articles/python/recording_exceptions_with_ereporter
+#https://developers.google.com/appengine/articles/python/recording_exceptions_with_ereporter
 ereporter.register_logger()
 
 

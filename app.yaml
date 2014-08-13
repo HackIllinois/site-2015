@@ -1,6 +1,4 @@
 #https://developers.google.com/appengine/docs/python/config/appconfig
-# There's no need to change this app ID anymore to push to dev! See the "Git Deploy Setup Guide" in README.md
-# Again: DO NOT CHANGE THIS APP ID FROM "hackillinois"
 application: hackillinois
 version: 2-0-0
 runtime: python27
