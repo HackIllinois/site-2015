@@ -7,6 +7,7 @@ from google.appengine.ext import ereporter
 
 from google.appengine.api import users
 
+from db import constants
 
 template_dir = os.path.join(os.path.dirname(__file__), os.pardir)
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
@@ -48,7 +49,7 @@ class BaseHandler(webapp2.RequestHandler):
 
         domain = email.split('@')[1] if len(email.split('@')) == 2 else None  # Sanity check
 
-        if domain == 'hackillinois.org':
+        if domain == 'hackillinois.org' or email in constants.TESTER_EMAILS:
             # Parent class will call the method to be dispatched
             # -- get() or post() or etc.
             logging.info('Admin user %s is online.', email)
