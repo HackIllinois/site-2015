@@ -1,5 +1,5 @@
 #https://developers.google.com/appengine/docs/python/config/appconfig
-application: hackillinois
+application: hackillinois-dev
 version: 2-0-0
 runtime: python27
 api_version: 1
@@ -8,10 +8,9 @@ default_expiration: "10m"
 
 handlers:
 
-#not used yet
-#- url: /favicon\.ico
-#  static_files: assets/img/favicon.ico
-#  upload: assets/img/favicon\.ico
+- url: /favicon\.ico
+  static_files: assets/favicon.ico
+  upload: assets/favicon\.ico
 
 - url: /robots.txt
   static_files: robots.txt
@@ -26,14 +25,15 @@ handlers:
 - url: /assets
   static_dir: assets
 
-# https://developers.google.com/appengine/articles/python/recording_exceptions_with_ereporter
+#https://developers.google.com/appengine/articles/python/recording_exceptions_with_ereporter
 - url: /_ereporter.*
   script: google.appengine.ext.ereporter.report_generator.application
   login: admin
   
 - url: .*
   script: main.app
-
+  login: required
+  
 libraries:
 - name: webapp2
   version: "2.5.2"
@@ -41,7 +41,7 @@ libraries:
 - name: jinja2
   version: "2.6"
 
-# https://developers.google.com/appengine/docs/python/tools/appstats?csw=1
+#https://developers.google.com/appengine/docs/python/tools/appstats?csw=1
 builtins:
 - appstats: on
 - remote_api: on

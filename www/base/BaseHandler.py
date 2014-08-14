@@ -1,7 +1,12 @@
+import logging
 import os
 import jinja2
 import webapp2
+
 from google.appengine.ext import ereporter
+
+from google.appengine.api import users
+
 
 template_dir = os.path.join(os.path.dirname(__file__), os.pardir)
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
@@ -31,4 +36,23 @@ class BaseHandler(webapp2.RequestHandler):
         page = t.render(params)
 
         return page
-		
+
+    def dispatch(self):
+        is_admin = False
+
+        user = users.get_current_user()
+        if not user:
+            return self.abort(401)
+
+        email = user.email()
+
+        domain = email.split('@')[1] if len(email.split('@')) == 2 else None  # Sanity check
+
+        if domain == 'hackillinois.org':
+            # Parent class will call the method to be dispatched
+            # -- get() or post() or etc.
+            logging.info('Admin user %s is online.', email)
+            super(BaseHandler, self).dispatch()
+        else:
+            logging.info('%s attempted to access an admin page but was denied.', email)
+            return self.abort(401)
