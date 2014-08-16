@@ -2,5 +2,6 @@ from google.appengine.ext import ndb
 from Model import Model
 
 class Email(Model):
-    email = ndb.StringProperty(required=True)
+    Model._automatically_add_event_as_ancestor()
 	
+    email = ndb.StringProperty(required=True)
