@@ -13,4 +13,9 @@ $(document).ready(function () {
             $('#email').addClass("error"); 
         }
     });
+
+    $('#email').keypress(function() {
+        $('#error_message').html("");
+        $('#email').removeClass("error");
+    });
 });
