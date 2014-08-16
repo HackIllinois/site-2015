@@ -1,12 +1,28 @@
-<html>
-    <head>
-        <title>Uh oh penguins!!!</title>
-        <style>
-            body { 
-                background: url(resources/fourOhFour.png) no-repeat center center fixed;
-                background-size: cover;
-            }
-        </style>
-    </head>
-</html>
-        
+{% extends "base/base.html" %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="css/e404.css">
+{% endblock %}
+{% block body %}
+        <div class="background bg-gradient"></div>
+        <div id="waves-container">
+            <ul id="scene">
+                <li class="layer" id="waves" data-depth="0.2"><object type="image/svg+xml" data="assets/map_wave_outlines.svg"></object></li>
+            </ul>
+        </div>
+		
+        <div id="content-container">
+            <div id="e404-content">
+               <div id="logo">
+                    <object type="image/svg+xml" data="assets/hackillinois_logo_gotham.svg"></object>
+                    <h2>Hack<br>Illinois</h2>
+                </div>
+                <span class="woah">Woah there, explorer!</span>
+                <span>It looks like you traveled off course</span>
+                <a href="/">Explore the homepage</a>
+                <a href="mailto:contact@hackillinois.org">Send an SOS</a> 
+            </div>
+        </div>
+
+        <script src="js/parallax.min.js"></script>
+        <script src="js/index/background.js"></script>
+{% endblock %}

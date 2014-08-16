@@ -63,7 +63,7 @@ body {
 
 #error_message {
     font-family: BrandonReg;
-    color: #EF4136; 
+    color: #EF4136;
 }
 
 .content {
@@ -79,6 +79,7 @@ body {
     font-family: GothamBlk;
     font-size: 20px;
     text-transform: uppercase;
+    color: white;
 }
 
 #logo object {
@@ -123,6 +124,8 @@ body {
     transition:.1s linear;
     -webkit-transition:.1s linear;
     -moz-transition:.1s linear;
+
+    margin-bottom: 4px;
 }
 
 .content form input:focus {
@@ -159,7 +162,7 @@ body {
 #thank_you {
     display: none;
     margin-top: 55px;
-    color: #000;
+    color: #353B3F;
     font-size: 20px;
     font-family: BrandonReg;
 }
