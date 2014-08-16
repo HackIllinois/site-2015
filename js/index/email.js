@@ -9,7 +9,8 @@ $(document).ready(function () {
         if (validateEmail()) {
             $('#email_form').submit();
         } else {
-		    $('#error_message').html("Please enter a valid email")
+		    $('#error_message').html("Please enter a valid email");
+            $('#email').addClass("error"); 
         }
     });
 });

@@ -1,4 +1,4 @@
-body, p, ul, li, button {
+* {
     margin: 0;
     padding: 0;
 }
@@ -43,6 +43,12 @@ body {
     top: -10%;
 
     z-index: -1;
+    border: 1px solid black;
+}
+
+#waves {
+    width: auto;
+    height: 120%
 }
 
 #scene li object {
@@ -51,12 +57,13 @@ body {
 }
 
 #content-container {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 #error_message {
-    color: red;
+    font-family: BrandonReg;
+    color: #EF4136; 
 }
 
 .content {
@@ -68,9 +75,15 @@ body {
     color: white;
 }
 
-.content object {
-    width: 88px;
-    height: 90px;
+#logo h2 {
+    font-family: GothamBlk;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#logo object {
+    width: 30px;
+    height: 42px;
 }
 
 .tag {
@@ -116,6 +129,11 @@ body {
     outline: none;
     box-shadow: 0px 0px 7px #fff;
     border-color: #fff;
+}
+
+.content form .error {
+    box-shadow: 0px 0px 7px #EF4136;
+    border-color: #EF4136;
 }
 
 .content form button {

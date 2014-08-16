@@ -21,3 +21,11 @@
          url('../assets/typefaces/BrandonGrotesque/Brandon_bld.woff') format('woff'),
          url('../assets/typefaces/BrandonGrotesque/Brandon_bld.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'GothamBlk';
+    src: url('../assets/typefaces/Gotham/GothamBlack.eot');
+    src: url('../assets/typefaces/Gotham/GothamBlack.eot?#iefix') format('embedded-opentype'),
+         url('../assets/typefaces/Gotham/GothamBlack.woff') format('woff'),
+         url('../assets/typefaces/Gotham/GothamBlack.ttf') format('truetype');
+}
