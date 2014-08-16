@@ -29,3 +29,11 @@
          url('../assets/typefaces/Gotham/GothamBlack.woff') format('woff'),
          url('../assets/typefaces/Gotham/GothamBlack.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url('../assets/typefaces/Pacifico/Pacifico.eot');
+    src: url('../assets/typefaces/Pacifico/Pacifico.eot?#iefix') format('embedded-opentype'),
+         url('../assets/typefaces/Pacifico/Pacifico.woff') format('woff'),
+         url('../assets/typefaces/Pacifico/Pacifico.ttf') format('truetype');
+}

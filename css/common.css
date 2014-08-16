@@ -156,6 +156,21 @@ body {
     color: #0071bc;
 }
 
+#thank_you {
+    display: none;
+    margin-top: 55px;
+    color: #000;
+    font-size: 20px;
+    font-family: BrandonReg;
+}
+
+#thank_you h3 {
+    color: #0071bc;
+    height: 60px;
+    font-size: 40px;
+    font-family: Pacifico;
+}
+
 ::-webkit-input-placeholder { color:#b3b3b3; }
 ::-moz-placeholder { color:#b3b3b3; } /* firefox 19+ */
 :-ms-input-placeholder { color:#b3b3b3; } /* ie */

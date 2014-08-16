@@ -7,7 +7,12 @@ $(document).ready(function () {
     $('#email_submit').click(function (event) {
         event.preventDefault();
         if (validateEmail()) {
-            $('#email_form').submit();
+            $('#email_form').css({
+                display: 'none'
+            });
+            $('#thank_you').css({
+                display: 'block'
+            });
         } else {
 		    $('#error_message').html("Please enter a valid email");
             $('#email').addClass("error"); 
