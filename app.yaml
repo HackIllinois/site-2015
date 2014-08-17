@@ -1,5 +1,6 @@
 #https://developers.google.com/appengine/docs/python/config/appconfig
 application: hackillinois-dev
+module: default
 version: 2-0-0
 runtime: python27
 api_version: 1
