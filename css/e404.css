@@ -1,10 +1,10 @@
 #content-container {
-    background: url(../assets/arrows.png) no-repeat center 35px fixed;
+    background: url(../assets/arrows.png) no-repeat center center fixed;
 }
 
 #e404-content {
     width: 730px;
-    height: 550px;
+    height: 620px;
     text-align: center;
 
     position: absolute;
