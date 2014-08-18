@@ -61,11 +61,6 @@ body {
     height: 100vh;
 }
 
-#error_message {
-    font-family: BrandonReg;
-    color: #EF4136;
-}
-
 .content {
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
@@ -104,7 +99,7 @@ body {
     font-family: 'BrandonReg';
 }
 
-.content form p {
+.info_text {
     font-size: 14px;
     color: #406072;
     margin-bottom: 5px;
@@ -134,7 +129,7 @@ body {
     border-color: #fff;
 }
 
-.content form .error {
+.content form .error:focus, .error {
     box-shadow: 0px 0px 7px #EF4136;
     border-color: #EF4136;
 }
@@ -172,6 +167,11 @@ body {
     height: 60px;
     font-size: 40px;
     font-family: Pacifico;
+}
+
+.error_message {
+    font-family: BrandonReg;
+    color: #ef4238;
 }
 
 ::-webkit-input-placeholder { color:#b3b3b3; }

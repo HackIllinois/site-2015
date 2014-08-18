@@ -20,28 +20,37 @@ $(document).ready(function () {
                         display: 'block'
                     });
 				}
-                else if(data === "indatabase"){
-                    $('#email_form').css({
+                else if(data === "indatabase"){ 
+                    $('.info_text').css({
                         display: 'none'
                     });
-                    $('#thank_you').css({
+                    $('.error_message').css({
                         display: 'block'
                     });
-                    $('#thank_you').html("already in DataBase (change this js\index\email)");
+                    $('.error_message').html("You've already registered this email!");
+                    $('#email').addClass("error");
 				}
 			});
         } else {
-		    $('#error_message').html("Please enter a valid email");
+            $('.info_text').css({
+                display: 'none'
+            });
+            $('.error_message').css({
+                display: 'block'
+            });
+		    $('.error_message').html("Please enter a valid email");
             $('#email').addClass("error"); 
         }
     });
 
     $('#email').keypress(function() {
+        $('.info_text').css({
+            display: 'block'
+        });
+        $('.error_message').css({
+            display: 'none'
+        });
         $('#error_message').html("");
         $('#email').removeClass("error");
-    });
-    $('#email').change(function() {
-        $('#error_message').html("");
-        $('#email').removeClass("error");
-    });
+    }); 
 });
