@@ -45,3 +45,9 @@
 #e404-content a + a {
     margin-left: 130px;
 }
+
+#boat {
+    width: 55px;
+    height: 160px;
+    position: absolute;
+}

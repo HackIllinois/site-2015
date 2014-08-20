@@ -1,5 +1,17 @@
+.bg-gradient {
+    background: url(../assets/map_gradient_bg.svg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+#waves-container { display: none; }
+
 .tag {
     color: red;
+}
+
+.content {
+    width: auto;
+    height: auto;
 }
 
 .content object {
@@ -7,13 +19,11 @@
 }
 
 .content form input {
-    width: 90%;
     height: 42px;
     font-size: 27px;
 }
 
 .content form button {
-    width: 90%;
     height: 42px;
     font-size: 29px;
 }
