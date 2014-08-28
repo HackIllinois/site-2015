@@ -1,11 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #598ec5;
     overflow: hidden;
-}
-
-.background {
-    //height: 100%;
-    //width: 100%;    
 }
 
 .bg-gradient {
@@ -58,6 +58,16 @@ body {
     -moz-transition:.1s linear;
 
     padding-left: 14px;
+}
+
+.content form button {
+    background-color: rgba(0, 113, 188, .85);
+    color: #fff;
+    font-family: 'BrandonReg';
+
+    border: none;
+    outline: none;
+    border-radius: 4px;
 }
 
 #thank_you {

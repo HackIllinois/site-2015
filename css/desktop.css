@@ -1,11 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
+.background {
+    height: 100%;
+    width: 100%;    
 }
-
-
-
-
 
 .bg-waves {
     background: url(../assets/map_wave_outlines.svg) no-repeat center center fixed;
@@ -99,19 +95,11 @@
     border-color: #EF4136;
 }
 
-.content form button {
-    background-color: rgba(0, 113, 188, .85);
-    color: #fff;
+.content form button {    
     font-size: 16px;
-    font-family: 'BrandonReg';
-
     margin-left: 4px;
     width: 110px;
     height: 35px;
-
-    border: none;
-    outline: none;
-    border-radius: 4px;
 
     cursor: pointer;
     cursor: hand;
