@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta name="author" content="HackIllinois Staff">
@@ -27,9 +26,9 @@
 		
         <link rel="stylesheet" type="text/css" href="css/fonts.css">
         <link rel="stylesheet" type="text/css" href="css/common.css">
-        {% block head_css %}{% endblock %}
+        {%- block head_css %}{% endblock %}
         
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
 		
         <!-- Google Analytics Tracking -->
@@ -42,10 +41,10 @@
           ga('create', 'UA-46010489-1', 'hackillinois.org');
           ga('send', 'pageview');
         </script>
-		{% block head %}{% endblock %}
+        {%- block head %}{% endblock %}
     </head>
 
     <body>
-	{% block body %}{% endblock %}
+    {%- block body %}{% endblock %}
     </body>
 </html>
