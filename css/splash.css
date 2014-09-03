@@ -68,7 +68,19 @@
     color: #0071bc;
 }
 
+.social-follow {
+	text-align: center;
+	margin-top: 20px;
+	padding-top: 20px;
+}
 
+.facebook-frame {
+    margin: 0px 10px;
+}
+
+.twitter-frame {
+    margin: 0px 10px;
+}
 
 }
 
@@ -150,4 +162,17 @@ body {
     font-family: Pacifico;
 }
 
+.social-follow {
+	text-align: center;
+	margin-top: 20px;
+	padding-top: 20px;
+}
+
+.facebook-frame {
+    margin: 0px 10px;
+}
+
+.twitter-frame {
+    margin: 0px 10px;
+}
 }
