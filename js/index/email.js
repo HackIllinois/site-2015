@@ -1,6 +1,6 @@
-function validateEmail() {
-    var re = new RegExp("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$")
-    return ($("#email").val().match(re));
+function validateEmail(email) {
+    var re = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return re.test(email);
 }
 
 $(document).ready(function () {
@@ -8,9 +8,10 @@ $(document).ready(function () {
         event.preventDefault();
         $('#error_message').html("");
         $('#email').removeClass("error");
-        if (validateEmail()) {
+		var email = $("#email").val();
+        if (validateEmail(email)) {
             data = {};
-            data['email'] = $("#email").val();
+            data['email'] = email;
             $.post('/', data, function(data) {
                 if(data === "success"){
                     $('#email_form').css({
