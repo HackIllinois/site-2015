@@ -1,3 +1,5 @@
+/* Desktop Styling */
+@media (min-width:500px){
 .background {
     height: 100%;
     width: 100%;    
@@ -14,28 +16,6 @@
     z-index: 0;
 }
 
-#waves-container {
-    position: absolute;
-    height: 120%;120
-    width: 120%;
-    
-    left: -10%;
-    top: -10%;
-
-    z-index: -1;
-    border: 1px solid black;
-}
-
-#waves {
-    width: auto;
-    height: 120%
-}
-
-#scene li object {
-    width: auto;
-    height: 120%;
-}
-
 #content-container {
     width: 100vw;
     height: 100vh;
@@ -47,16 +27,11 @@
     margin: auto;
 
     text-align: center;
-    color: white;
 }
 
 .tag {
     margin-top: 80px;
-
-    color: #fff;
 }
-
-
 
 .content {
     width: 500px;
@@ -67,32 +42,14 @@
     margin-top: 65px;
 }
 
-.info_text {
-    font-size: 14px;
-    color: #406072;
-    margin-bottom: 5px;
-}
-
 .content form input {
     font-size: 16px;
-    font-family: 'BrandonReg';
     
     width: 350px;
     height: 35px;
 
    
     margin-bottom: 4px;
-}
-
-.content form input:focus {
-    outline: none;
-    box-shadow: 0px 0px 7px #fff;
-    border-color: #fff;
-}
-
-.content form .error:focus, .error {
-    box-shadow: 0px 0px 7px #EF4136;
-    border-color: #EF4136;
 }
 
 .content form button {    
@@ -111,6 +68,73 @@
     color: #0071bc;
 }
 
+
+
+}
+
+
+
+/* Mobile Styling */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px), 
+(max-width : 499px) {
+
+body {
+    background: url(../assets/map_wave_outlines.svg) no-repeat center center fixed,
+                url(../assets/land_with_details_2000.png) no-repeat center center fixed,
+                url(../assets/map_gradient_bg.svg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+#waves-container { display: none; }
+
+.tag {
+    width: 260px;
+    margin: 6vh auto 0;
+    line-height: 30px;
+}
+
+.date {
+    margin: 0;
+}
+
+.content {
+    text-align: center;
+    margin-top: 18vh;
+}
+
+.content object {
+    position: relative;
+}
+
+.content form {
+    margin: 7.5vh auto 0;
+
+    width: -moz-calc(100% - 40px);
+    width: -webkit-calc(100% - 40px);
+    width: -o-calc(100% - 40px);
+    width: calc(100% - 40px);
+}
+
+.content form input, .content form button {
+    display: block;
+    margin: 0;
+    height: 42px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.content form input {
+    margin-bottom: 5px;
+    padding-left: 10px;
+    width: -moz-calc(100% - 10px);
+    width: -webkit-calc(100% - 10px);
+    width: -o-calc(100% - 10px);
+    width: calc(100% - 10px);
+}
+
 #thank_you {
     display: none;
     margin-top: 55px;
@@ -126,23 +150,4 @@
     font-family: Pacifico;
 }
 
-.error_message {
-    font-family: BrandonReg;
-    color: #ef4238;
-}
-
-::-webkit-input-placeholder { color:#b3b3b3; }
-::-moz-placeholder { color:#b3b3b3; } /* firefox 19+ */
-:-ms-input-placeholder { color:#b3b3b3; } /* ie */
-input:-moz-placeholder { color:#b3b3b3; }
-
-/* Misc stying classes */
-.clear:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.upper {
-    text-transform: uppercase;
 }

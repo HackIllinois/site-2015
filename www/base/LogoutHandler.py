@@ -4,4 +4,4 @@ from google.appengine.api import users
 
 class LogoutHandler(BaseHandler):
     def get(self):
-        self.redirect('/dfsasd')
+        self.redirect(users.create_logout_url("/"))
