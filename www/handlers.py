@@ -6,6 +6,7 @@ import www.base.LogoutHandler
 
 site_handlers = [
     RedirectRoute('/', handler=www.index.Handlers.MainHandler, name='Index', strict_slash=True),
+    RedirectRoute('/logout', handler=www.base.LogoutHandler.LogoutHandler, name='Logout', strict_slash=True),
     RedirectRoute('/404', handler=www.error.Handlers.Error404Handler, name='Error404', strict_slash=True),
 ]
 
