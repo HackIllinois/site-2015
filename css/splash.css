@@ -90,6 +90,10 @@ body {
 
 #waves-container { display: none; }
 
+#logo h2 {
+    font-size: 18px;
+}
+
 .tag {
     width: 260px;
     margin: 6vh auto 0;
@@ -102,7 +106,7 @@ body {
 
 .content {
     text-align: center;
-    margin-top: 18vh;
+    margin-top: 14vh;
 }
 
 .content object {
@@ -110,7 +114,7 @@ body {
 }
 
 .content form {
-    margin: 7.5vh auto 0;
+    margin: 12vh auto 0;
 
     width: -moz-calc(100% - 40px);
     width: -webkit-calc(100% - 40px);
