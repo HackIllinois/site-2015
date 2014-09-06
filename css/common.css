@@ -116,6 +116,17 @@ body {
 
 #thank_you {
     display: none;
+    margin-top: 55px;
+    color: #353B3F;
+    font-size: 20px;
+    font-family: BrandonReg;
+}
+
+#thank_you h3 {
+    color: #0071bc;
+    height: 60px;
+    font-size: 40px;
+    font-family: Pacifico;
 }
 
 .error_message {
