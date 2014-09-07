@@ -6,6 +6,12 @@ runtime: python27
 api_version: 1
 threadsafe: yes
 default_expiration: "10m"
+instance_class: F1
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: automatic
+  min_pending_latency: automatic
+  max_pending_latency: automatic
 
 handlers:
 
