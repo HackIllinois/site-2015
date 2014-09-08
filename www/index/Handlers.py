@@ -10,8 +10,17 @@ class MainHandler(BaseHandler):
         email = str(urllib.unquote(self.request.get('email')))
 		#TODO: render pages
         if not re.match(r"^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$", email):
-            self.write("invalid")
+            if self.request.get('js'):
+                self.write("invalid")
+            else:
+                self.render("index/default.html")
         elif(Email.add({"email":email})):
-            self.write("success")
+            if self.request.get('js'):
+                self.write("success")
+            else:
+                self.render("index/default.html")
         else:
-            self.write("indatabase")
+            if self.request.get('js'):
+                self.write("indatabase")
+            else:
+                self.render("index/default.html")

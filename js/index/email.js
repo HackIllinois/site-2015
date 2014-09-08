@@ -12,6 +12,7 @@ $(document).ready(function () {
         if (validateEmail(email)) {
             data = {};
             data['email'] = email;
+            data['js'] = true;
             $.post('/', data, function(data) {
                 if(data === "success"){
                     $('#email_form').css({
