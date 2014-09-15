@@ -81,12 +81,12 @@ and (max-device-width : 480px),
 (max-width : 499px) {
 
 body {
-    background: url(../assets/map_wave_outlines.svg) no-repeat center center fixed,
-                url(../assets/land_with_details_2000.png) no-repeat center center fixed,
+    background: url(../assets/map_top.png) no-repeat center center fixed,
+                url(../assets/map_bottom.png) no-repeat center center fixed,
+                url(../assets/map_wave_outlines.svg) no-repeat center center fixed,
                 url(../assets/map_gradient_bg.svg) no-repeat center center fixed;
     background-size: cover;
 }
-
 
 #waves-container { display: none; }
 
