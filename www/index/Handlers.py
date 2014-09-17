@@ -5,7 +5,7 @@ import re
 
 class MainHandler(BaseHandler):
     def get(self):
-        self.render("index/default.html")
+        self.render("index/default.html", invalid=False, success=False, indatabase=False)
     def post(self):
         email = str(urllib.unquote(self.request.get('email')))
 		#TODO: render pages
@@ -13,14 +13,14 @@ class MainHandler(BaseHandler):
             if self.request.get('js'):
                 self.write("invalid")
             else:
-                self.render("index/default.html")
+                self.render("index/default.html", invalid=True, success=False, indatabase=False)
         elif(Email.add({"email":email})):
             if self.request.get('js'):
                 self.write("success")
             else:
-                self.render("index/default.html")
+                self.render("index/default.html", invalid=False, success=True, indatabase=False)
         else:
             if self.request.get('js'):
                 self.write("indatabase")
             else:
-                self.render("index/default.html")
+                self.render("index/default.html", invalid=False, success=False, indatabase=True)
