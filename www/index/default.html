@@ -25,7 +25,7 @@
                 <form method="post" id="email_form" {% if success%}style="display:none"{% endif %}>
                     <p class="info_text" {% if indatabase or invalid%}style="display:none"{% endif %}>Be the first to know when the expedition starts</p>
                     <p class="error_message info_text" {% if indatabase or invalid%}style="display:block"{% endif %}>{% if indatabase%}You've already registered this email!{% endif %}{% if invalid%}Please enter a valid email{% endif %}</p>
-                    <input type="text" name="email" id="email"{% if indatabase or invalid%}class="error"{% endif %} autofocus placeholder="future-explorer@arctic.edu">
+                    <input type="text" name="email" id="email"{% if indatabase or invalid%}class="error"{% endif %} value="{{user_email}}" autofocus placeholder="future-explorer@arctic.edu">
                     <button id="email_submit">Submit</button>
                 </form>
                 <div id="thank_you" {% if success%}style="display:block"{% endif %}>
