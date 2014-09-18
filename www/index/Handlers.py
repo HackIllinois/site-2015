@@ -24,3 +24,4 @@ class MainHandler(BaseHandler):
                 self.write("indatabase")
             else:
                 self.render("index/default.html", invalid=False, success=False, indatabase=True, user_email=email)
+ 

@@ -27,3 +27,4 @@ class Error401Handler(www.base.BaseHandler.BaseHandler):
 class Error404Handler(www.base.BaseHandler.BaseHandler):
 	def get(self):
 		return self.abort(404)
+ 
