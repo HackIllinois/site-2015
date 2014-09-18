@@ -15,11 +15,11 @@
 # limitations under the License.
 
 import webapp2
-import www.handlers
+import www.site_handlers
 
-all_handlers = www.handlers.site_handlers
+all_handlers = www.site_handlers.www_handlers
 
 app = webapp2.WSGIApplication(all_handlers, debug=True)
 
-for error in www.handlers.error_handlers:
-	app.error_handlers[error] = www.handlers.error_handlers[error]
+for error in www.site_handlers.error_handlers:
+	app.error_handlers[error] = www.site_handlers.error_handlers[error]
