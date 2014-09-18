@@ -28,6 +28,11 @@
     margin-top: 80px;
 }
 
+#content-container {
+    width: 100vw;
+    height: 100vh;
+}
+
 .content {
     width: 500px;
     height: 420px;
@@ -81,6 +86,7 @@ body {
                 url(../assets/map_wave_outlines.svg) no-repeat center center fixed,
                 url(../assets/map_gradient_bg.svg) no-repeat center center fixed;
     background-size: cover;
+    height: 100%;
 }
 
 #waves-container { display: none; }
@@ -101,12 +107,14 @@ body {
 
 #content-container {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    margin: 0;
 }
 
 .content {
     text-align: center;
     margin-top: 14vh;
+    border: 1px solid black;
 }
 
 .content object {
@@ -137,6 +145,10 @@ body {
     width: -webkit-calc(100% - 10px);
     width: -o-calc(100% - 10px);
     width: calc(100% - 10px);
+}
+
+.content form {
+    margin-bottom: auto;
 }
 
 }
