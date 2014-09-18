@@ -1,14 +1,12 @@
-{% extends "base/base.html" %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HackIllinois Admin</title>
+        {# TODO(kevin): Add CSS for admin pages #}
+    </head>
 
-{% block head_css %}
-{# TODO(kevin): Add CSS for admin pages #}
-{% endblock %}
-
-{% block body %}
-<nav>
-    <ul>
-        <li><a href="/admin">Home</a></li>
-    </ul>
-</nav>
-{% block content %}{% endblock %}
-{% endblock %}
+    <body>
+        {% include 'admin/nav.html' %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

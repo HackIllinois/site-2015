@@ -5,4 +5,4 @@ class AdminHomeHandler(BaseHandler):
     """Homepage for the admin section."""
 
     def get(self):
-        self.render('admin/home.html')
+        self.render('admin/default.html')
