@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+
+{% block head_css %}
+{# TODO(kevin): Add CSS for admin pages #}
+{% endblock %}
+
+{% block body %}
+<nav>
+    <ul>
+        <li><a href="/admin">Home</a></li>
+    </ul>
+</nav>
+{% block content %}{% endblock %}
+{% endblock %}
