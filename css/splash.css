@@ -5,11 +5,6 @@
     width: 100%;    
 }
 
-.bg-waves {
-    background: url(../assets/map_wave_outlines.svg) no-repeat center center fixed;
-    background-size: cover;
-}
-
 .bg-land {
     background: url(../assets/land_with_details.png) no-repeat center center fixed;
     background-size: cover;
