@@ -54,5 +54,12 @@ $(document).ready(function () {
         });
         $('#error_message').html("");
         $('#email').removeClass("error");
-    }); 
+    });
+    /*$(window).resize(function() {
+        if(($(window).width()<=480)||($(window).height()<=360)){
+            $('.bg-land').slideUp();
+            console.log('hiiden');
+        }
+        alert($(window).width()<=480, $(window).height()<=360);
+    });*/
 });

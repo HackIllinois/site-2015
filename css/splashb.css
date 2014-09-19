@@ -1,0 +1,221 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100vh;
+	width: 100%;
+}
+
+.container-main {
+	width: 100%;
+	height: 100%;
+    background: -webkit-linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
+    background: -o-linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
+    background: -moz-linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
+    background: linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
+    overflow: hidden;
+}
+
+.bg-waves {
+    background: url(../assets/map_wave_outlines.svg) repeat;
+    background-size: cover;
+	overflow: hidden;
+
+    height: 140%;
+    width: 140%;
+    margin-top:-10%;
+    margin-left:-10%;
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.bg-land {
+	background: url(../assets/land_with_details_20002.png) no-repeat center center;
+    background-size: auto;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	position: fixed;
+	top:0;
+	left:0;
+}
+
+.content {
+    width: 500px;
+    height: 580px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    z-index: 3;
+    position: relative;
+    top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.logo {
+    width: 100%;
+    padding-top: 30px;
+}
+
+.logo object {
+    width: 30px;
+    height: 42px;
+}
+
+.logo h2 {
+    font-family: GothamBlk;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    display: block;
+}
+
+.tag {
+    font-family: 'BrandonBlack';
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #fff;
+    padding-top: 110px;
+}
+
+.date {
+    font-family: 'BrandonBold';
+    font-size: 20px;
+    color: #727f84;
+}
+
+.content form {
+    font-family: 'BrandonReg';
+}
+
+
+.info_text {
+    font-size: 14px;
+    color: #406072;
+    margin-bottom: 5px;
+}
+
+.error_message {
+    font-family: BrandonReg;
+    color: #ef4238;
+}
+
+.content form { 
+    margin-top: 65px;
+}
+
+.content form input {
+    font-size: 16px;
+    
+    width: 350px;
+    height: 35px;   
+    margin-bottom: 4px;
+}
+
+.content form button {    
+    font-size: 16px;
+    margin-left: 4px;
+    height: 35px;
+    width: 110px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.content form button:hover {
+    background-color: rgba(0, 113, 188, 0);
+    border: 2px dashed rgba(0, 113, 188, .85);
+    color: #0071bc;
+}
+
+
+.content form input {
+    background-color: rgba(23, 54, 86, .5);
+    font-family: 'BrandonReg';
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding-left: 14px;
+
+/*
+    transition:.1s linear;
+    -webkit-transition:.1s linear;
+    -moz-transition:.1s linear;
+*/
+}
+
+.content form input:focus {
+    outline: none;
+    box-shadow: 0px 0px 7px #fff;
+    border-color: #fff;
+}
+
+.content form .error:focus, .error {
+    box-shadow: 0px 0px 7px #EF4136;
+    border-color: #EF4136;
+}
+
+.content form button {
+    background-color: rgba(0, 113, 188, .85);
+    color: #fff;
+    font-family: 'BrandonReg';
+
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/**/
+#thank_you {
+    display: none;
+    margin-top: 55px;
+    color: #353B3F;
+    font-size: 20px;
+    font-family: BrandonReg;
+}
+
+#thank_you h3 {
+    color: #0071bc;
+    height: 60px;
+    font-size: 40px;
+    font-family: Pacifico;
+}
+/*.bg-land {
+	background: url(../assets/land_with_details_2000.png) no-repeat center center fixed;
+	height: 100vh;
+	width: auto;
+}
+mobile
+*/
+
+@media (max-width:500px) {
+	/*.tag {
+		font-size: 26px;
+	} fix for single line tagline on mobile */
+	.content {
+		width: 100%;
+	}
+	.content form {
+		padding-left:18px;
+		padding-right:18px;
+	}
+	.content form input {
+		width:96%;
+	}
+	.content form button {
+	    width: inherit;
+	    width: 100%;
+        border: none;
+    	margin-left: -1px;
+        font-size: 16px;
+    	height: 35px;   
+    	margin-bottom: 4px;
+	}
+}

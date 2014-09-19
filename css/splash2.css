@@ -1,19 +1,16 @@
 /* Desktop Styling */
 @media (min-width:500px){
-.background {
+.content {
+
     height: 100%;
-    width: 100%;    
+    width: 100%;
+    }
 }
 
-.bg-waves {
-    background: url(../assets/map_wave_outlines.svg) no-repeat center center fixed;
-    background-size: 120% auto;
-}
-
-.bg-land {
-    background: url(../assets/land_with_details_2000.png) no-repeat center center fixed;
-    background-size: cover;
-    z-index: 0;
+@media (max-width: 430px){
+    .tag {
+        font-size: 24px;
+    }
 }
 
 .content {
@@ -26,12 +23,9 @@
 
 .tag {
     margin-top: 80px;
-    color: #0071bc;
 }
 
 .content {
-    width: 500px;
-    height: 420px;
 }
 
 .content form { 
@@ -42,16 +36,13 @@
     font-size: 16px;
     
     width: 350px;
-    height: 35px;
-
-   
+    height: 35px;   
     margin-bottom: 4px;
 }
 
 .content form button {    
     font-size: 16px;
     margin-left: 4px;
-    width: 110px;
     height: 35px;
 
     cursor: pointer;
@@ -65,26 +56,39 @@
 }
 
 
+@media screen and (orientation:landscape) {
+    /* Landscape styles */
 
+.bg-gradient {
+        height: 130%;
+    }
 }
 
 
+@media screen and (orientation:portrait) 
+and (min-device-height: 400px) {
+    .bg-gradient {
+        overflow: scroll;
+        height: 200%;
+    }
+}
 
 /* Mobile Styling */
 @media only screen
 and (min-device-width : 320px)
-and (max-device-width : 480px), 
-(max-width : 499px) {
+and (max-device-width : 480px)
+and (max-width : 499px) {
 
 body {
-    background: url(../assets/map_top.png) no-repeat center center fixed,
-                url(../assets/map_bottom.png) no-repeat center center fixed,
-                url(../assets/map_wave_outlines.svg) no-repeat center center fixed,
-                url(../assets/map_gradient_bg.svg) no-repeat center center fixed;
-    background-size: cover;
+    background: url(../assets/map_top.png) no-repeat center center scroll,
+                url(../assets/map_bottom.png) no-repeat center center scroll;
+    /*background-size: scroll;*/
+    overflow-y: scroll; 
 }
 
-#waves-container { display: none; }
+.bg-gradient {
+    height: 100%;
+}
 
 #logo h2 {
     font-size: 18px;
@@ -100,14 +104,12 @@ body {
     margin: 0;
 }
 
-#content-container {
-    width: 100vw;
-    height: 100vh;
-}
-
 .content {
     text-align: center;
-    margin-top: 14vh;
+    padding-top: 30vh;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
 }
 
 .content object {
@@ -129,9 +131,10 @@ body {
     height: 42px;
     font-size: 16px;
     width: 100%;
+
 }
 
-.content form input {
+.content form input, .content form button {
     margin-bottom: 5px;
     padding-left: 10px;
     width: -moz-calc(100% - 10px);

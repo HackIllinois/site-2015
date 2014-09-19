@@ -5,6 +5,9 @@ import www.error.handlers
 
 www_handlers = [
     RedirectRoute('/', handler=www.index.handlers.MainHandler, name='Index', strict_slash=True),
+    RedirectRoute('/a', handler=www.index.handlers.MainHandler2, name='Index2', strict_slash=True),
+    RedirectRoute('/b', handler=www.index.handlers.MainHandler3, name='Index3', strict_slash=True),
+    
     RedirectRoute('/404', handler=www.error.handlers.Error404Handler, name='Error404', strict_slash=True),
 ]
 

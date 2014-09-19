@@ -4,8 +4,15 @@
 }
 
 body {
-    background-color: #598ec5;
-    overflow: hidden;
+    background: -webkit-linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
+    background: -o-linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
+    background: -moz-linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
+    background: linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
+}
+
+.container-main{
+    height: 100%;
+    width: 100%;
 }
 
 .bg-gradient {
@@ -13,43 +20,62 @@ body {
     background: -o-linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
     background: -moz-linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
     background: linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
-
-    
+ 
     position: absolute;
-    z-index: -2;
-}
-
-#waves-container {
-    position: absolute;
-    height: 120%;
-    width: 120%;
     
-    left: -10%;
-    top: -10%;
-
-    z-index: -1;
+    height: 100%;
+    width: 100%;
 }
 
-#waves {
-    width: auto;
-    height: 120%;
+.bg-waves {
+    background: url(../assets/map_wave_outlines.svg) no-repeat center center scroll;
+    background-size: cover;
+
+
+    margin-top: -20%;
+    margin-right: -20%;
+
+    height: 140%;
+    width: 140%;
+    z-index: 0;
 }
 
-#scene li object {
-    width: auto;
-    height: 120%;
+.bg-land {
+    background: url(../assets/land_with_details_2000.png) no-repeat center center scroll;
+    background-size: cover;
+
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 1
 }
 
-#logo object {
+.content {
+    width: 500px;
+    height: 580px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.logo {
+    width: 100%;
+}
+
+.logo object {
     width: 30px;
     height: 42px;
 }
 
-#logo h2 {
+.logo h2 {
     font-family: GothamBlk;
     font-size: 20px;
     text-transform: uppercase;
-    color: #0071bc;
+    color: white;
+    text-align: center;
+    display: block;
 }
 
 .tag {
@@ -65,9 +91,10 @@ body {
     color: #727f84;
 }
 
-.content {
-    color: #0071bc;
+.content form {
+    font-family: 'BrandonReg';
 }
+
 
 .info_text {
     font-size: 14px;
@@ -75,8 +102,9 @@ body {
     margin-bottom: 5px;
 }
 
-.content form {
-    font-family: 'BrandonReg';
+.error_message {
+    font-family: BrandonReg;
+    color: #ef4238;
 }
 
 .content form input {
@@ -85,12 +113,13 @@ body {
     color: #fff;
     border: none;
     border-radius: 4px;
+    padding-left: 14px;
 
+/*
     transition:.1s linear;
     -webkit-transition:.1s linear;
     -moz-transition:.1s linear;
-
-    padding-left: 14px;
+*/
 }
 
 .content form input:focus {
@@ -112,8 +141,10 @@ body {
     border: none;
     outline: none;
     border-radius: 4px;
+    font-size: 16px;
 }
 
+/**/
 #thank_you {
     display: none;
     margin-top: 55px;
@@ -123,18 +154,15 @@ body {
 }
 
 #thank_you h3 {
-    color: #0001bc;
+    color: #0071bc;
     height: 60px;
     font-size: 40px;
     font-family: Pacifico;
 }
 
-.error_message {
-    font-family: BrandonReg;
-    color: #ef4238;
-}
-
 /* Misc stying classes */
+
+/*
 .clear:after {
     content: "";
     display: table;
@@ -144,8 +172,40 @@ body {
 .upper {
     text-transform: uppercase;
 }
+*/
 
+/*Explain This*/
 ::-webkit-input-placeholder { color:#b3b3b3; }
 ::-moz-placeholder { color:#b3b3b3; } /* firefox 19+ */
-:-ms-input-placeholder { color:#b3b3b3; } /* ie */
-input:-moz-placeholder { color:#b3b3b3; }
+/*:-ms-input-placeholder { color:#b3b3b3; } /* ie */
+/*input:-moz-placeholder { color:#b3b3b3; }*/
+/*
+.resize-kb {
+    position: absolute;
+    bottom: 10px;
+}*/
+
+
+
+/*
+#waves-container {
+    position: absolute;
+    height: 120%;
+    width: 120%;
+    
+    left: -10%;
+    top: -10%;
+
+    z-index: -1;
+}
+
+#waves {
+    width: auto;
+    height: 120%;
+}
+
+#scene li object {
+    width: auto;
+    height: 120%;
+}
+*/

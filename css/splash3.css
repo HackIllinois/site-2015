@@ -1,19 +1,24 @@
-/* Desktop Styling */
+/* Desktop Styling *//*
 @media (min-width:500px){
-.background {
+
+.container-main{
     height: 100%;
-    width: 100%;    
+    width: 100%;  
+}
+
+.bg-gradient {
+    height: 100%;
+    width: 100%;  
 }
 
 .bg-waves {
-    background: url(../assets/map_wave_outlines.svg) no-repeat center center fixed;
-    background-size: 120% auto;
+    height: 100%;
+    width: 100%;  
 }
 
 .bg-land {
-    background: url(../assets/land_with_details_2000.png) no-repeat center center fixed;
-    background-size: cover;
-    z-index: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .content {
@@ -24,14 +29,13 @@
     text-align: center;
 }
 
-.tag {
-    margin-top: 80px;
-    color: #0071bc;
+/*possibly 30/88
+.logo {
+    margin-top: 85px;
 }
 
-.content {
-    width: 500px;
-    height: 420px;
+.tag {
+    margin-top: 83px;
 }
 
 .content form { 
@@ -58,19 +62,36 @@
     cursor: hand;
 }
 
+
 .content form button:hover {
     background-color: rgba(0, 113, 188, 0);
     border: 2px dashed rgba(0, 113, 188, .85);
     color: #0071bc;
 }
 
+}
+/*
+@media (max-width:500px){
+.bg-land {
+    background: Blue;
+    background-size: cover;
+    z-index: 0;
+}
+    }
+/*
+
+
+
+
+
+
 
 
 }
 
 
 
-/* Mobile Styling */
+/* Mobile Styling *//*
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 480px), 
@@ -140,4 +161,4 @@ body {
     width: calc(100% - 10px);
 }
 
-}
+}*/

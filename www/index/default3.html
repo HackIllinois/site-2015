@@ -1,31 +1,24 @@
-{% extends "base/base.html" %}
+{% extends "base/base2.html" %}
 {% block head_css %}
-        <link rel="stylesheet" type="text/css" href="css/splash.css">
+        <link rel="stylesheet" type="text/css" href="css/commonb.css">
+        <link rel="stylesheet" type="text/css" href="css/splashb.css">
 {%- endblock %}
 {% block body %}
-        <div class="background bg-gradient">
-            <div class="background bg-land"></div>
-        </div>
-        <div id="waves-container">
-            <ul id="scene">
-                <li class="layer" id="waves" data-depth="0.2"><object type="image/svg+xml" data="assets/map_wave_outlines.svg"></object></li>
-            </ul>
-        </div>
-        
-        <div id="content-container">
+        <div class="container-main">
+            <div class="bg-waves"></div>
+            <div class="bg-land"></div>
             <div class="content">
-                <div id="logo">
+                <div class="logo">
                     <object type="image/svg+xml" data="assets/hackillinois_logo_gotham.svg"></object>
                     <h2>Hack<br>Illinois</h2>
                 </div>
-
-                <p class="upper tag">Find your inner explorer</p>
+                <p class="tag">Find your inner explorer</p>
                 <p class="date">Feb 27 - Mar 1</p>
 
                 <form method="post" id="email_form" {% if success%}style="display:none"{% endif %}>
                     <p class="info_text" {% if indatabase or invalid%}style="display:none"{% endif %}>Be the first to know when the expedition starts</p>
                     <p class="error_message info_text" {% if indatabase or invalid%}style="display:block"{% endif %}>{% if indatabase%}You've already registered this email!{% endif %}{% if invalid%}Please enter a valid email{% endif %}</p>
-                    <input type="text" name="email" id="email"{% if indatabase or invalid%}class="error"{% endif %} value="{{user_email}}" autofocus placeholder="future-explorer@arctic.edu">
+                    <input type="text" name="email" id="email"{% if indatabase or invalid%}class="error"{% endif %} value="{{user_email}}" placeholder="future-explorer@arctic.edu">
                     <button id="email_submit">Submit</button>
                 </form>
                 <div id="thank_you" {% if success%}style="display:block"{% endif %}>
@@ -34,8 +27,6 @@
                 </div>
             </div>
         </div>
-
         <script src="js/parallax.min.js"></script>
         <script src="js/index/email.js"></script>
-        <script src="js/index/background.js"></script>
 {%- endblock %}
