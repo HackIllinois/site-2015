@@ -5,13 +5,8 @@
     width: 100%;    
 }
 
-.bg-waves {
-    background: url(../assets/map_wave_outlines.svg) no-repeat center center fixed;
-    background-size: 120% auto;
-}
-
 .bg-land {
-    background: url(../assets/land_with_details_2000.png) no-repeat center center fixed;
+    background: url(../assets/land_with_details.png) no-repeat center center fixed;
     background-size: cover;
     z-index: 0;
 }
@@ -27,6 +22,11 @@
 .tag {
     margin-top: 80px;
     color: #0071bc;
+}
+
+#content-container {
+    width: 100vw;
+    height: 100vh;
 }
 
 .content {
@@ -82,6 +82,7 @@ body {
                 url(../assets/map_wave_outlines.svg) no-repeat center center fixed,
                 url(../assets/map_gradient_bg.svg) no-repeat center center fixed;
     background-size: cover;
+    height: 100%;
 }
 
 #waves-container { display: none; }
@@ -102,12 +103,14 @@ body {
 
 #content-container {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    margin: 0;
 }
 
 .content {
     text-align: center;
     margin-top: 14vh;
+    border: 1px solid black;
 }
 
 .content object {
