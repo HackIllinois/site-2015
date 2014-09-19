@@ -11,7 +11,7 @@
 }
 
 .bg-land {
-    background: url(../assets/land_with_details_2000.png) no-repeat center center fixed;
+    background: url(../assets/land_with_details.png) no-repeat center center fixed;
     background-size: cover;
     z-index: 0;
 }
