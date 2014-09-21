@@ -191,6 +191,15 @@ body {
 	width: auto;
 }
 
+/*desktop*/
+@media (min-width: 1700px), (min-height: 960px)){
+    .bg-land{
+        background: url(../assets/land_with_details_20002.png) no-repeat center center;
+        background-size: cover;
+    }
+
+}
+
 /* mobile */
 @media (max-width:500px) {
 	/*.tag {
