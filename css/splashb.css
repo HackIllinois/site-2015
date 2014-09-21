@@ -51,16 +51,13 @@ body {
 
 .content {
     width: 500px;
-    height: 580px;
-    margin: 0 auto;
+    height: 550px;
+    margin: auto;
     text-align: center;
     color: white;
     z-index: 3;
-    position: relative;
-    top: 50%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
 }
 
 .logo {
