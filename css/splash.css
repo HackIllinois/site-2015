@@ -24,7 +24,6 @@ body {
 }
 
 .bg-waves {
-    //background: url(../assets/map_wave_outlines.svg) repeat;
     background-size: cover;
 	overflow: hidden;
 
@@ -191,6 +190,34 @@ body {
     }
 
 }
+
+
+/* landscape */
+@media (max-height:550px) {
+    /*.tag {
+        font-size: 26px;
+    } fix for single line tagline on mobile */
+    .container-main {
+        height: 550px;
+        min-height: 100%;
+        overflow: visible;
+    }
+    .bg-land {
+        height: auto;
+        min-height: 100%;
+        position: relative;
+    }
+    .content {
+        width: 100%;
+        height: auto;
+        top: 0;
+
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+    }
+}
+
 
 /* mobile */
 @media (max-width:500px) {
