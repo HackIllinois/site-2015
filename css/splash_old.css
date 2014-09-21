@@ -1,16 +1,14 @@
 /* Desktop Styling */
 @media (min-width:500px){
-.content {
-
+.background {
     height: 100%;
-    width: 100%;
-    }
+    width: 100%;    
 }
 
-@media (max-width: 430px){
-    .tag {
-        font-size: 24px;
-    }
+.bg-land {
+    background: url(../assets/land_with_details.png) no-repeat center center fixed;
+    background-size: cover;
+    z-index: 0;
 }
 
 .content {
@@ -25,7 +23,14 @@
     margin-top: 80px;
 }
 
+#content-container {
+    width: 100vw;
+    height: 100vh;
+}
+
 .content {
+    width: 500px;
+    height: 420px;
 }
 
 .content form { 
@@ -36,13 +41,16 @@
     font-size: 16px;
     
     width: 350px;
-    height: 35px;   
+    height: 35px;
+
+   
     margin-bottom: 4px;
 }
 
 .content form button {    
     font-size: 16px;
     margin-left: 4px;
+    width: 110px;
     height: 35px;
 
     cursor: pointer;
@@ -56,39 +64,27 @@
 }
 
 
-@media screen and (orientation:landscape) {
-    /* Landscape styles */
 
-.bg-gradient {
-        height: 130%;
-    }
 }
 
 
-@media screen and (orientation:portrait) 
-and (min-device-height: 400px) {
-    .bg-gradient {
-        overflow: scroll;
-        height: 200%;
-    }
-}
 
 /* Mobile Styling */
 @media only screen
 and (min-device-width : 320px)
-and (max-device-width : 480px)
-and (max-width : 499px) {
+and (max-device-width : 480px), 
+(max-width : 499px) {
 
 body {
-    background: url(../assets/map_top.png) no-repeat center center scroll,
-                url(../assets/map_bottom.png) no-repeat center center scroll;
-    /*background-size: scroll;*/
-    overflow-y: scroll; 
-}
-
-.bg-gradient {
+    background: url(../assets/map_top.png) no-repeat center center fixed,
+                url(../assets/map_bottom.png) no-repeat center center fixed,
+                url(../assets/map_wave_outlines.svg) no-repeat center center fixed,
+                url(../assets/map_gradient_bg.svg) no-repeat center center fixed;
+    background-size: cover;
     height: 100%;
 }
+
+#waves-container { display: none; }
 
 #logo h2 {
     font-size: 18px;
@@ -104,12 +100,16 @@ body {
     margin: 0;
 }
 
+#content-container {
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+}
+
 .content {
     text-align: center;
-    padding-top: 30vh;
-    width: 100%;
-    height: 100%;
-    overflow-y: scroll;
+    margin-top: 14vh;
+    border: 1px solid black;
 }
 
 .content object {
@@ -131,10 +131,9 @@ body {
     height: 42px;
     font-size: 16px;
     width: 100%;
-
 }
 
-.content form input, .content form button {
+.content form input {
     margin-bottom: 5px;
     padding-left: 10px;
     width: -moz-calc(100% - 10px);
