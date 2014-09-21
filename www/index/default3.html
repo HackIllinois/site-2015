@@ -5,7 +5,11 @@
 {%- endblock %}
 {% block body %}
         <div class="container-main">
-            <div class="bg-waves"></div>
+            <div class="bg-waves">
+                <ul id="scene">
+                    <li class="layer" id="waves" data-depth="0.2"><object type="image/svg+xml" data="assets/map_wave_outlines.svg"></object></li>
+                </ul>
+            </div>
             <div class="bg-land">
                 <div class="content">
                     <div class="logo">
@@ -30,4 +34,5 @@
         </div>
         <script src="js/parallax.min.js"></script>
         <script src="js/index/email.js"></script>
+        <script src="js/index/background.js"></script>
 {%- endblock %}

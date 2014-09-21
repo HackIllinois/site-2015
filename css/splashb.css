@@ -24,7 +24,7 @@ body {
 }
 
 .bg-waves {
-    background: url(../assets/map_wave_outlines.svg) repeat;
+    //background: url(../assets/map_wave_outlines.svg) repeat;
     background-size: cover;
 	overflow: hidden;
 
@@ -193,9 +193,8 @@ body {
 	height: 100vh;
 	width: auto;
 }
-mobile
-*/
 
+/* mobile */
 @media (max-width:500px) {
 	/*.tag {
 		font-size: 26px;
@@ -204,8 +203,11 @@ mobile
         height: 100%;
         min-height: 100%;
         overflow: visible;
+        background: none;
     }
     .bg-land {
+        background: url(../assets/land_with_details_20002.png) no-repeat center center,
+                    url(../assets/map_gradient_bg.svg) no-repeat center center;
         height: auto;
         min-height: 100%;
         position: relative;
