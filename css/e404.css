@@ -1,5 +1,13 @@
+body {
+    background: -webkit-linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
+    background: -o-linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
+    background: -moz-linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
+    background: linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
+}
+
 #content-container {
     background: url(../assets/arrows.png) no-repeat center center fixed;
+    height: 100%;
 }
 
 #e404-content {
