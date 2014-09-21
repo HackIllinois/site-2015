@@ -207,7 +207,7 @@ body {
     }
     .bg-land {
         background: url(../assets/land_with_details_20002.png) no-repeat center center,
-                    url(../assets/map_gradient_bg.svg) no-repeat center center;
+                    url(../assets/gradient.png) no-repeat center center;
         height: auto;
         min-height: 100%;
         position: relative;
