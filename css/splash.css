@@ -29,12 +29,22 @@ body {
 
     height: 140%;
     width: 140%;
-    margin-top:-10%;
-    margin-left:-10%;
+    margin-top:-20%;
+    margin-left:-20%;
     z-index: 0;
     position: fixed;
     top: 0;
     left: 0;
+}
+
+#scene{
+    height: 100%;
+    width: 100%;
+}
+
+#waves{
+    height: 100%;
+    width: 100%;
 }
 
 .bg-land {
