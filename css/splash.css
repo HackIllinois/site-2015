@@ -204,8 +204,11 @@ body {
         background: none;
     }
     .bg-land {
-        background: url(../assets/land_with_details.png) no-repeat center center,
+        background: url(../assets/map_bottom.png) no-repeat center center,
+                    url(../assets/map_top.png) no-repeat center center,
+                    url(../assets/map_wave_outlines.svg) no-repeat center center,
                     url(../assets/gradient.png) no-repeat center center;
+        background-size: cover;
         height: auto;
         min-height: 100%;
         position: relative;
@@ -220,6 +223,8 @@ body {
         transform: none;
 	}
     .tag {
+        width: 260px;
+        margin: 0 auto;
         margin-top: 55px;
     }
 	.content form {
