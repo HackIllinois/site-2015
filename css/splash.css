@@ -141,11 +141,9 @@ body {
     border-radius: 4px;
     padding-left: 14px;
 
-/*
     transition:.1s linear;
     -webkit-transition:.1s linear;
     -moz-transition:.1s linear;
-*/
 }
 
 .content form input:focus {
@@ -170,7 +168,6 @@ body {
     font-size: 16px;
 }
 
-/**/
 #thank_you {
     display: none;
     margin-top: 55px;
@@ -185,11 +182,6 @@ body {
     font-size: 40px;
     font-family: Pacifico;
 }
-/*.bg-land {
-	background: url(../assets/land_with_details_2000.png) no-repeat center center fixed;
-	height: 100vh;
-	width: auto;
-}
 
 /* mobile */
 @media (max-width:500px) {
@@ -203,7 +195,7 @@ body {
         background: none;
     }
     .bg-land {
-        background: url(../assets/land_with_details_20002.png) no-repeat center center,
+        background: url(../assets/land_with_details.png) no-repeat center center,
                     url(../assets/gradient.png) no-repeat center center;
         height: auto;
         min-height: 100%;
