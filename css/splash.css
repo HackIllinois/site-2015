@@ -225,30 +225,24 @@ body {
 		font-size: 26px;
 	} fix for single line tagline on mobile */
     .container-main {
-        height: 100%;
+        height: 550px;
         min-height: 100%;
         overflow: visible;
-        background: none;
     }
     .bg-land {
-        background: url(../assets/map_bottom.png) no-repeat center center,
-                    url(../assets/map_top.png) no-repeat center center,
-                    url(../assets/map_wave_outlines.svg) no-repeat center center,
-                    url(../assets/gradient.png) no-repeat center center;
-        background-size: cover;
         height: auto;
         min-height: 100%;
         position: relative;
     }
-	.content {
-		width: 100%;
+    .content {
+        width: 100%;
         height: auto;
         top: 0;
 
         -webkit-transform: none;
         -ms-transform: none;
         transform: none;
-	}
+    }
     .tag {
         width: 260px;
         margin: 0 auto;
