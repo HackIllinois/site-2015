@@ -24,6 +24,15 @@ body {
     display: block;
 }
 
+#logo h2 {
+    font-family: GothamBlk;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    display: block;
+}
+
 .woah {
     font-family: BrandonBlack;
     font-size: 56px;
