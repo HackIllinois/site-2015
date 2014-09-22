@@ -186,7 +186,7 @@ body {
 /*desktop*/
 @media (min-width: 1700px), (min-height: 960px)){
     .bg-land{
-        background: url(../assets/land_with_details_20002.png) no-repeat center center;
+        background: url(../assets/land_with_details2000.png) no-repeat center center;
         background-size: cover;
     }
 
