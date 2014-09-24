@@ -32,6 +32,10 @@ handlers:
 - url: /assets
   static_dir: assets
 
+- url: /sponsor(s?)(/?)
+  static_files: assets/HackIllinois Sponsorship.pdf
+  upload: assets/HackIllinois Sponsorship\.pdf
+
 #https://developers.google.com/appengine/articles/python/recording_exceptions_with_ereporter
 - url: /_ereporter.*
   script: google.appengine.ext.ereporter.report_generator.application
