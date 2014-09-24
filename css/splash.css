@@ -58,6 +58,16 @@ body {
 	left:0;
 }
 
+.content-container {
+    background-size: auto;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: fixed;
+    top:0;
+    left:0;
+}
+
 .content {
     width: 500px;
     height: 550px;
@@ -217,6 +227,13 @@ body {
         min-height: 100%;
         overflow: visible;
     }
+
+    .content-container {
+        height: auto;
+        min-height: 100%;
+        position: relative;
+    }
+    
     .bg-land {
         height: auto;
         min-height: 100%;
@@ -246,6 +263,13 @@ body {
         min-height: 100%;
         position: relative;
     }
+
+    .content-container {
+        height: auto;
+        min-height: 100%;
+        position: relative;
+    }
+
     .content {
         width: 100%;
         height: 550px;
