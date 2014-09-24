@@ -74,9 +74,14 @@ body {
     padding-top: 30px;
 }
 
-.logo object {
+.logo img {
     width: 30px;
     height: 42px;
+}
+
+.logo object {
+    width: 30px;
+    height: 44px;
 }
 
 .logo h2 {

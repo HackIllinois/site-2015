@@ -5,14 +5,7 @@ body {
     background: linear-gradient(140deg, #8287b2, #b5d6de, #5a8ec5) center no-repeat;
 }
 
-#content-container {
-    background: url(../assets/arrows.png) no-repeat center center fixed;
-    height: 100%;
-}
-
-#e404-content {
-    width: 730px;
-    height: 620px;
+.content {
     text-align: center;
 
     position: absolute;
@@ -20,11 +13,11 @@ body {
     margin: auto;
 }
 
-#e404-content span {
+.content span {
     display: block;
 }
 
-#logo h2 {
+.logo h2 {
     font-family: GothamBlk;
     font-size: 20px;
     text-transform: uppercase;
@@ -48,18 +41,18 @@ body {
     margin-bottom: 54px;
 }
 
-#e404-content a {
+.content a {
     font-family: BrandonReg;
     text-decoration: none;
     font-size: 20px;
     color: #1071b9;
 }
 
-#e404-content a:hover {
+.content a:hover {
     border-bottom: 2px dashed #1071b9;
 }
 
-#e404-content a + a {
+.content a + a {
     margin-left: 130px;
 }
 

@@ -12,7 +12,7 @@
             <div class="bg-land">
                 <div class="content">
                     <div class="logo">
-                        <object type="image/svg+xml" data="assets/hackillinois_logo_gotham.svg"></object>
+                        <img src="assets/hackillinois_logo_red.png">
                         <h2>Hack<br>Illinois</h2>
                     </div>
                     <p class="tag">Find your inner explorer</p>
@@ -21,12 +21,11 @@
                     <form method="post" id="email_form" {% if success%}style="display:none"{% endif %}>
                         <p class="info_text" {% if indatabase or invalid%}style="display:none"{% endif %}>Be the first to know when the expedition starts</p>
                         <p class="error_message info_text" {% if indatabase or invalid%}style="display:block"{% endif %}>{% if indatabase%}You've already registered this email!{% endif %}{% if invalid%}Please enter a valid email{% endif %}</p>
-                        <input type="text" name="email" id="email"{% if indatabase or invalid%}class="error"{% endif %} value="{{user_email}}" placeholder="future-explorer@arctic.edu">
+                        <input type="text" name="email" id="email"{% if indatabase or invalid%}class="error"{% endif %} value="{{user_email}}" placeholder="future-explorer@arctic.com">
                         <button id="email_submit">Submit</button>
                     </form>
                     <div id="thank_you" {% if success%}style="display:block"{% endif %}>
-                        <h3>Thank You!</h3>
-                        We'll be in touch shortly
+                        <h3>The Adventure Awaits!</h3>
                     </div>
                 </div>
             </div>

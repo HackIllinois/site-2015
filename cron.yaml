@@ -1,9 +1,9 @@
 # https://developers.google.com/appengine/articles/scheduled_backups
 #UNDERSTAND
 cron:
-- description: daily Email backup
+- description: 6-hourly Email backup
   url: /_ah/datastore_admin/backup.create?name=BackupToCloud&kind=Email&filesystem=gs&gs_bucket_name=hackillinois_backup
-  schedule: every day 06:05
+  schedule: every 6 hours
   target: ah-builtin-python-bundle
 
 - description: 6-hourly exception report
