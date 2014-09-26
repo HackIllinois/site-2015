@@ -11,7 +11,8 @@ def handle401(request, response, exception):
 	# Unauthorized
 	logging.exception(exception)
 	url = users.create_logout_url('/')
-	render(response, "error/e401.html", message="<a href='" + url + "'>Logout</a>")
+	user = users.get_current_user()
+	render(response, "error/e401.html", message= user.email() + " can not view this page <a href='" + url + "'>Logout</a>")
 	response.set_status(401)
 	
 def handle404(request, response, exception):
