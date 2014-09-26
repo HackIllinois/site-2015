@@ -8,7 +8,7 @@ $(document).ready(function () {
         if (aspectRatio > 1.0) {
             // Page is horizontal
             $("#waves").css({
-                width: aspectRatio*140 + "%",
+                width: aspectRatio*140 + 40 + "%",
                 height: "auto"
             });
         } else {
