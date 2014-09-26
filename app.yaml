@@ -22,13 +22,13 @@ handlers:
 - url: /robots.txt
   static_files: robots.txt
   upload: robots\.txt
-  
+
 - url: /css
   static_dir: css
-  
+
 - url: /js
   static_dir: js
-  
+
 - url: /assets
   static_dir: assets
 
@@ -40,10 +40,10 @@ handlers:
 - url: /_ereporter.*
   script: google.appengine.ext.ereporter.report_generator.application
   login: admin
-  
+
 - url: .*
   script: main.app
-  
+
 libraries:
 - name: webapp2
   version: "2.5.2"
