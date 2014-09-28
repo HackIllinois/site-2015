@@ -1,4 +1,4 @@
-from www.base.BaseHandler import BaseHandler
+from www.base.handlers import BaseHandler
 import urllib, logging
 from db.Email import Email
 import re
