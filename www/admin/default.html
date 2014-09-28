@@ -3,11 +3,15 @@
         <!--TODO: (kevin): Add CSS for admin pages-->
 {%- endblock %}
 {% block body %}
-hello admins
+hello admins there are {{data.email_count}} hacker emails
 
+<table>
 {% for h in data.email %}
-{{ h.email }}
+<tr>
+	<td>{{ h.email }}</td>
+</tr>
 {% endfor %}
+</table>
 
 <div><a href="{{ data.logout_url|safe }}">Logout</a></div>
 {%- endblock %}
