@@ -5,7 +5,6 @@ from www.base.handlers import MemcacheHandler
 from db.Email import Email
 
 from google.appengine.api import users
-from google.appengine.ext import ndb
 
 class AdminHandler(BaseAdminHandler, MemcacheHandler):
     """Homepage for the admin section."""

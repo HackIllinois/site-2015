@@ -238,7 +238,7 @@ class Model(ndb.Model):
 
         ex: Attendee.update_model(key)
         '''
-        #These functions need to be changed to delete all references a model ex. an Attendee in a Team
+        #If the key is stored in multiple places this function need to be changed to delete all references a model ex. an Attendee in a Team
         key.delete()
 
     @classmethod
