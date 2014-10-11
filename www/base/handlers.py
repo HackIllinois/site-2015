@@ -76,6 +76,10 @@ class BaseAdminHandler(BaseHandler):
             return self.abort(401)
 
 class MemcacheHandler:
+    """
+    TODO: Stress Test Memcache with high volume and large strings
+    """
+
     """http://stackoverflow.com/questions/7111068/split-string-by-count-of-characters"""
     def chunks(self, s, n):
         """Produce `n`-character chunks from `s`."""
@@ -106,10 +110,9 @@ class MemcacheHandler:
         #gets count of chunks
         #returns None if it can't get count, or count is 0 (no chunks set)
         count = memcache.get(key)
-        if count == 0 or count == None:
-            #Memcache string is invalid
-            return None
 
+        if count == 0 or count == None:
+            return None
 
         #gets groups of chucks each at most 32 MB and concatinates the chunks
         #returns None if it can't get a chunk
@@ -129,8 +132,8 @@ class MemcacheHandler:
                 keys = []
         if i % 32:
             result = memcache.get_multi(keys)
-            for x in range(32):
-                k = '%s.%s' % (key, i+x-32)
+            for x in range(i%32):
+                k = '%s.%s' % (key, i/32*32+x)
                 if k not in result or not result[k]:
                     #Memcache string is invalid
                     return None
