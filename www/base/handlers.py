@@ -76,7 +76,7 @@ class BaseAdminHandler(BaseHandler):
             return self.abort(401)
 
 class MemcacheHandler:
-    # http://stackoverflow.com/questions/7111068/split-string-by-count-of-characters
+    """http://stackoverflow.com/questions/7111068/split-string-by-count-of-characters"""
     def chunks(self, s, n):
         """Produce `n`-character chunks from `s`."""
         for start in range(0, len(s), n):
@@ -87,49 +87,76 @@ class MemcacheHandler:
         serialized = pickle.dumps(value)
         values = {}
         i = 0
-        for chunk in self.chunks(serialized, chunksize):
+        data_chunks = self.chunks(serialized, chunksize)
+
+        #sets groups of chucks each at most 32 MB
+        for chunk in data_chunks:
             values['%s.%s' % (key, i)] = chunk
             i += 1
-        memcache.set_multi(values, time=10800)
+            if i % 32 == 0:
+                memcache.set_multi(values, time=10800)
+                values = {}
+        if i % 32:
+            memcache.set_multi(values, time=10800)
+        #sets count of chunks
+        memcache.set(key, i)
 
     """http://stackoverflow.com/questions/9127982/avoiding-memcache-1m-limit-of-values"""
     def retrieve(self, key):
-        MAX_SPLITS = 32
-        result = memcache.get_multi(['%s.%s' % (key, i) for i in xrange(MAX_SPLITS)])
+        #gets count of chunks
+        #returns None if it can't get count, or count is 0 (no chunks set)
+        count = memcache.get(key)
+        if count == 0 or count == None:
+            #Memcache string is invalid
+            return None
+
+
+        #gets groups of chucks each at most 32 MB and concatinates the chunks
+        #returns None if it can't get a chunk
+        keys = []
         serialized = ''
-        for i in xrange(MAX_SPLITS):
-            k = '%s.%s' % (key, i)
-            if k not in result or not result[k]:
-                break
-            serialized += result[k]
+        for i in range(count):
+            keys.append('%s.%s' % (key, i))
+            i += 1
+            if i % 32 == 0:
+                result = memcache.get_multi(keys)
+                for x in range(32):
+                    k = '%s.%s' % (key, i+x-32)
+                    if k not in result or not result[k]:
+                        #Memcache string is invalid
+                        return None
+                    serialized += result[k]
+                keys = []
+        if i % 32:
+            result = memcache.get_multi(keys)
+            for x in range(32):
+                k = '%s.%s' % (key, i+x-32)
+                if k not in result or not result[k]:
+                    #Memcache string is invalid
+                    return None
+                serialized += result[k]
         data = None
         if serialized:
             data = pickle.loads(serialized)
         return data
 
-    def set_memcache(self, key):
-        """Temp"""
+    def set_email_memcache(self):
         data = {}
         emails = Email.search_database()
         for email in emails:
-            logging.error(email.email)
             data[email.email] = {
                 'email': email.email}
 
-        logging.error("FADS")
-        self.store(key, data)
+        self.store('email', data)
         return data
 
-    def get_memcache(self, key):
-        data = self.retrieve(key)
-
-        stats = memcache.get_stats()
-        logging.info('Cache Hits:%s, Cache Misses:%s' % (stats['hits'], stats['misses']))
-
+    def get_email_memcache(self):
+        data = self.retrieve('email')
         if data is None:
             logging.info('setting memcache')
-            data = self.set_memcache(key)
-        return [ data[i] for i in data ]
+            data = self.set_email_memcache()
+        return data
+
 
 class LogoutHandler(BaseHandler):
     """Delet after login system switch"""
