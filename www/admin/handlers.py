@@ -12,6 +12,6 @@ class AdminHandler(BaseAdminHandler, MemcacheHandler):
     def get(self):
         data = {}
         data['logout_url'] = users.create_logout_url('/')
-        data['email'] = self.get_memcache('email')
+        data['email'] = Email.query(ancestor=Email.get_default_event_parent_key()).fetch()
         data['email_count'] = len(data['email'])
         self.render("admin/default.html", data=data)
