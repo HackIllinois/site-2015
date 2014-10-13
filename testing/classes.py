@@ -1,7 +1,8 @@
 # fAppend the parent directory so modules in the parent directory can be imported
 import os, sys
 #You may need to change these paths
-sys.path.append(os.path.abspath(os.path.dirname('../Hackillinois-website-2015/www')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))
+
 #TODO: install webtest for HandlerTestCase
 import unittest, json, pickle, base64#, webtest
 from google.appengine.ext import testbed
@@ -16,11 +17,10 @@ from google.appengine.tools import dev_appserver_index
 
 class DatastoreTestCase(unittest.TestCase):
     def setUp(self):
-        root_directory = '/Users/sueflanzman/Documents/Hackillinois-website-2015'
-        
+        root_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
+        print "root_directory: " + root_directory
         # Create the testbed and setup the testing environment. The testbed must be activated to work properly
         self.testbed = testbed.Testbed()
-        self.testbed.setup_env(current_version_id='2-0-2')
         self.testbed.activate()
         
         # Initialize the testbed stubs

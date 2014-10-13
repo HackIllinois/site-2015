@@ -1,14 +1,12 @@
 #!/usr/bin/python
 import optparse, sys, os, unittest
-from Datastore_tests import TestSequenceFunctions
-
-
 
 def main(sdk_path, test_path, test='*'):
     sys.path.insert(0, sdk_path)
     import dev_appserver
     dev_appserver.fix_sys_path()
-    #suite = unittest.TestLoader().loadTestsFromTestCase(TestSequenceFunctions)
+    print "ZZZZZZ"
+    print dev_appserver
     suite = unittest.loader.TestLoader().discover(test_path, "test_" + test)
     unittest.TextTestRunner(verbosity=2).run(suite)
 
@@ -17,8 +15,9 @@ if __name__ == '__main__':
     parser = optparse.OptionParser("")
     options, args = parser.parse_args()
     
-    SDK_PATH = '/usr/local/google_appengine'
-    TEST_PATH = '/Users/sueflanzman/Documents/hackillinois-website-2015/www/tests'
+    SDK_PATH = '/usr/local/google_appengine'#For Mac OS X
+    TEST_PATH = os.path.dirname(__file__)
+    print "TEST_PATH: " + TEST_PATH
     
     if len(args) == 1:
         if args[0] == 'all':
