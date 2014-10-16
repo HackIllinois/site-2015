@@ -1,23 +1,18 @@
 import random
 import unittest
 from classes import DatastoreTestCase
+from www.base.handlers import MemcacheHandler
 from db.Email import Email
 
-class tests(DatastoreTestCase):
+class DatastoreTests(DatastoreTestCase, MemcacheHandler):
 
-	def test_pass(self):
-		self.assertEqual(1,1)
-
-	def test_fail(self):
-		self.assertEqual(1,2)
-
-	def test_two(self):
+	def test_add_pass(self):
+		#Simply adds one email to datastore
 		a = Email.add({"email":"this@is.myemail"})
-		#a should be in the local datastore, but it doesn't show up
 		self.assertNotEqual(a, False)
 
-	def test_three(self):
+	def test_add_multiple(self):
+		#b should not be added because it conflicts with a
 		a = Email.add({"email":"this@is.myemail"})
 		b = Email.add({"email":"this@is.myemail"})
-		#a should be in the local datastore, but it doesn't show up
 		self.assertEqual(b, False)
