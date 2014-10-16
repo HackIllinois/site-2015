@@ -16,5 +16,6 @@ class IndexHandlerTests(HandlerTestCase, MemcacheHandler):
 		params = {"email":"this@is.myemail"}
 
 		response = self.testapp.post('/', params)
-		a = Email.search_database({"email":"this@is.myemail"});
+		a = Email.search_database({"email":"this@is.myemail"})
+		self.assertEqual(response.status_int, 200)
 		self.assertEqual(len(a.fetch()), 1)
