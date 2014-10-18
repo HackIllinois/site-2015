@@ -16,13 +16,12 @@ sendgrid_api_user = 'hackillinois'
 sendgrid_api_key = 'RXeN7Ju2y'
 
 sendgrid_api_url = 'https://api.sendgrid.com/api'
-
 sendgrid_identity = 'contact@hackillinois.org'
 
 # CHANGE THESE
-sendgrid_list_name = 'CHANGE NAME [DATETIME]'
 sendgrid_template_name = 'Second Survey Email'
 category = "test_team"
+subject = "test"
 
 def main():
     parser = argparse.ArgumentParser(description='Send Mass Emails')
@@ -42,30 +41,11 @@ def main():
     if raw_input('> Would you would like to email these addresses? [y/n]: ').lower() != 'y':
         exit()
 
-#    datetime_str = datetime.datetime.now().strftime('%m-%d-%Y %I:%M:%S %p')
-
     # Locate the email containing our template and get the data from it
     template_html, template_subject, template_text = locate_template_email()
 
-    # Header for SMTPAPI
-    #header = create_SMTP_header(emails, category)
-
     # Create a new email with the data from the template
     message = create_email(template_html, template_subject, template_text, emails, category)
-
-    # Create a new email list to store our recipients
-    # Not used, but good to store
-    #email_list_name = create_email_list(datetime_str)
-
-    #print 'sleeping for a minute'
-    #sleep(60)
-
-    # Add recipients to the list
-    # Not used, but good to store
-    #add_emails_to_list(email_list_name, emails)
-
- #   print 'sleeping for a minute'
-  #  sleep(60)
 
     # Confirm that we should actually send it now
     if raw_input('> Email ready to send. Would you like to send now? [y/n]: ').lower() != 'y':
@@ -108,82 +88,21 @@ def locate_template_email():
         exit()
 
     return template_html, template_subject, template_text
-"""
-def create_SMTP_header(emails, category):
-    header = SMTPAPIHeader()
-    header.set_tos(emails)
-    header.add_category(category)
-    return header.json_string()
-"""
+
 def create_email(template_html, template_subject, template_text, emails, category):
     print 'Creating Email...'
     message = sendgrid.Mail()
 
-    message.set_subject('template_subject2')
+    message.set_subject(subject)
     message.set_text(template_text)
     message.set_html(template_html)
     message.set_from(sendgrid_identity)
     message.add_category(category)
-#    message.set_headers(header)
     message.add_to(emails)
-
     #message.add_bcc(['example1@email.com', 'example2@gmail.com]')
 
     print 'Email created successfully!'
     return message
-
-def quit_if_error(req):
-    if 'message' not in req or req['message'] != 'success':
-        print 'Error: %s' % req
-        exit()
-"""
-def create_email_list(datetime_str):
-    print 'Creating email list....'
-    email_list_name = sendgrid_list_name.replace('DATETIME', datetime_str)
-    email_list_req = sendgrid_req('/newsletter/lists/add.json', data={
-        'list': email_list_name
-    })
-
-    quit_if_error(email_list_req)
-
-    print 'Email list created!'
-    return email_list_name
-
-def add_emails_to_list(email_list_name, emails):
-    print 'Adding emails to list...'
-    data = []
-    for email in emails:
-        #TODO: Send multiple emails in one request
-        #Currently I'm getting an error
-        obj = {
-            'email': email,
-            'name': 'HackIllinois Attendee'
-        }
-        add_emails_req = sendgrid_req('/newsletter/lists/email/add.json', data={
-            'list': email_list_name,
-            'data': json.dumps(obj)
-        })
-        print "adding " + email + " " + str(add_emails_req["inserted"])
-        #will quit if we get an error
-        if add_emails_req["inserted"] != 1:
-            quit_if_error(add_emails_req)
-
-    sendgrid_req('/newsletter/lists/email/get.json', data={
-            'list': email_list_name
-        })
-    print 'Emails added!'
-
-#DO NOT USE COST $$$$
-def send_email(marketing_email_name):
-    print 'Sending email...'
-    req = sendgrid_req('/newsletter/schedule/add.json', data={
-        'name': marketing_email_name
-    })
-
-    quit_if_error(req)
-
-    print 'Email sent!'
-"""
 
 def parse_emails(filename):
     with open(filename) as email_list:
