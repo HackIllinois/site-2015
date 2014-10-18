@@ -3,6 +3,7 @@ from webapp2_extras.routes import RedirectRoute, DomainRoute
 import www.index.handlers
 import www.error.handlers
 import www.admin.handlers
+import www.admin.test_email.handlers
 import www.base.handlers
 
 www_handlers = [
@@ -13,6 +14,7 @@ www_handlers = [
 
     # Admin routes
     RedirectRoute('/admin', handler=www.admin.handlers.AdminHandler, name='Admin', strict_slash=True),
+    RedirectRoute('/admin/testEmail', handler=www.admin.test_email.handlers.EmailHandler, name='email', strict_slash=True),
 ]
 
 error_handlers = {

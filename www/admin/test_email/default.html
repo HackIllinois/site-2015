@@ -1,0 +1,10 @@
+{% extends "base/base.html" %}
+{% block body %}
+        <div class="container-main">
+            <form method="post" id="email_form">
+                <p class="info_text" {% if indatabase or invalid%}style="display:none"{% endif %}>Enter your email get a response (please don't enter other people emails)</p>
+                <input type="text" name="email" id="email" value="" placeholder="someone@hackillinois.org">
+                <button id="email_submit">Submit</button>
+            </form>
+        </div>
+{%- endblock %}
