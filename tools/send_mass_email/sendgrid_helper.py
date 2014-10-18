@@ -7,15 +7,81 @@ import datetime
 import requests
 import sys
 
+import sendgrid
+from sendgrid import SendGridError, SendGridClientError, SendGridServerError
+from smtpapi import SMTPAPIHeader
+
+
 sendgrid_api_user = 'hackillinois'
 sendgrid_api_key = 'RXeN7Ju2y'
-sendgrid_api_url = 'https://api.sendgrid.com/api'
-sendgrid_template_name = 'NEED NEW TEMPLATE'
 
-# This must be created already in the SendGrid account
+sendgrid_api_url = 'https://api.sendgrid.com/api'
+
 sendgrid_identity = 'contact@hackillinois.org'
-sendgrid_marketing_name = 'CHANGE NAME [DATETIME]'
+
+# CHANGE THESE
 sendgrid_list_name = 'CHANGE NAME [DATETIME]'
+sendgrid_template_name = 'Second Survey Email'
+category = "test_team"
+
+def main():
+    parser = argparse.ArgumentParser(description='Send Mass Emails')
+    parser.add_argument('filename', help='A comma separated list of emails to send to')
+    args = parser.parse_args()
+
+    emails = parse_emails(args.filename)
+
+    print '%d emails read from file: %s' % (len(emails), emails)
+
+    # SendGrid's email API adding only adds 1000 people at a time.
+    # If we have a need for it, it's just a few lines to support more than 1000 people by making multiple requests
+    if len(emails) > 1000:
+        print 'Error: cannot email more than 1000 people. See code for details. This could be easily hacked around.'
+        exit()
+
+    if raw_input('> Would you would like to email these addresses? [y/n]: ').lower() != 'y':
+        exit()
+
+#    datetime_str = datetime.datetime.now().strftime('%m-%d-%Y %I:%M:%S %p')
+
+    # Locate the email containing our template and get the data from it
+    template_html, template_subject, template_text = locate_template_email()
+
+    # Header for SMTPAPI
+    #header = create_SMTP_header(emails, category)
+
+    # Create a new email with the data from the template
+    message = create_email(template_html, template_subject, template_text, emails, category)
+
+    # Create a new email list to store our recipients
+    # Not used, but good to store
+    #email_list_name = create_email_list(datetime_str)
+
+    #print 'sleeping for a minute'
+    #sleep(60)
+
+    # Add recipients to the list
+    # Not used, but good to store
+    #add_emails_to_list(email_list_name, emails)
+
+ #   print 'sleeping for a minute'
+  #  sleep(60)
+
+    # Confirm that we should actually send it now
+    if raw_input('> Email ready to send. Would you like to send now? [y/n]: ').lower() != 'y':
+        exit()
+
+    # Send the email
+
+    print 'Sending email...'
+    sg = sendgrid.SendGridClient(sendgrid_api_user, sendgrid_api_key, raise_errors=True)
+
+    try:
+        sg.send(message)
+    except SendGridError:
+        print SendGridError
+        exit()
+    print "Email Sent!"
 
 
 def locate_template_email():
@@ -42,25 +108,35 @@ def locate_template_email():
         exit()
 
     return template_html, template_subject, template_text
+"""
+def create_SMTP_header(emails, category):
+    header = SMTPAPIHeader()
+    header.set_tos(emails)
+    header.add_category(category)
+    return header.json_string()
+"""
+def create_email(template_html, template_subject, template_text, emails, category):
+    print 'Creating Email...'
+    message = sendgrid.Mail()
 
+    message.set_subject('template_subject2')
+    message.set_text(template_text)
+    message.set_html(template_html)
+    message.set_from(sendgrid_identity)
+    message.add_category(category)
+#    message.set_headers(header)
+    message.add_to(emails)
 
-def create_marketing_email(datetime_str, template_html, template_subject, template_text):
-    print 'Creating Marketing Email...'
-    marketing_email_name = sendgrid_marketing_name.replace('DATETIME', datetime_str)
-    marketing_email_req = sendgrid_req('/newsletter/add.json', data={
-        'identity': sendgrid_identity,
-        'name': marketing_email_name,
-        'subject': template_subject,
-        'html': template_html,
-        'text': template_text
-    })
+    #message.add_bcc(['example1@email.com', 'example2@gmail.com]')
 
-    quit_if_error(marketing_email_req)
+    print 'Email created successfully!'
+    return message
 
-    print 'Marketing email created successfully!'
-    return marketing_email_name
-
-
+def quit_if_error(req):
+    if 'message' not in req or req['message'] != 'success':
+        print 'Error: %s' % req
+        exit()
+"""
 def create_email_list(datetime_str):
     print 'Creating email list....'
     email_list_name = sendgrid_list_name.replace('DATETIME', datetime_str)
@@ -72,13 +148,6 @@ def create_email_list(datetime_str):
 
     print 'Email list created!'
     return email_list_name
-
-
-def quit_if_error(req):
-    if 'message' not in req or req['message'] != 'success':
-        print 'Error: %s' % req
-        exit()
-
 
 def add_emails_to_list(email_list_name, emails):
     print 'Adding emails to list...'
@@ -104,19 +173,7 @@ def add_emails_to_list(email_list_name, emails):
         })
     print 'Emails added!'
 
-
-def add_list_to_email(email_list_name, marketing_email_name):
-    print 'Adding list to email...'
-    req = sendgrid_req('/newsletter/recipients/add.json', data={
-        'list': email_list_name,
-        'name': marketing_email_name
-    })
-
-    quit_if_error(req)
-
-    print 'List added successfully!'
-
-
+#DO NOT USE COST $$$$
 def send_email(marketing_email_name):
     print 'Sending email...'
     req = sendgrid_req('/newsletter/schedule/add.json', data={
@@ -126,6 +183,7 @@ def send_email(marketing_email_name):
     quit_if_error(req)
 
     print 'Email sent!'
+"""
 
 def parse_emails(filename):
     with open(filename) as email_list:
@@ -146,57 +204,6 @@ def sendgrid_req(api_path, data={}):
 
     req = requests.post(sendgrid_api_url + api_path, data=data)
     return req.json()
-
-def main():
-    parser = argparse.ArgumentParser(description='Send HackIllinois Acceptance Emails')
-    parser.add_argument('filename', help='A comma separated list of emails to send to')
-    args = parser.parse_args()
-
-    emails = parse_emails(args.filename)
-
-    print '%d emails read from file: %s' % (len(emails), emails)
-
-    # SendGrid's email API adding only adds 1000 people at a time.
-    # If we have a need for it, it's just a few lines to support more than 1000 people by making multiple requests
-    if len(emails) > 1000:
-        print 'Error: cannot email more than 1000 people. See code for details. This could be easily hacked around.'
-        exit()
-
-    if raw_input('> Would you would like to email these addresses? [Y/n]: ').lower() != 'y':
-        exit()
-
-    datetime_str = datetime.datetime.now().strftime('%m-%d-%Y %I:%M:%S %p')
-
-    # Locate the email containing our template and get the data from it
-    template_html, template_subject, template_text = locate_template_email()
-
-    # Create a new marketing email with the data from the template
-    marketing_email_name = create_marketing_email(datetime_str, template_html, template_subject, template_text)
-
-    # Create a new email list to store our recipients
-    email_list_name = create_email_list(datetime_str)
-
-    print 'sleeping for a minute'
-    sleep(60)
-
-    # Add recipients to the list
-    add_emails_to_list(email_list_name, emails)
-
-    print 'sleeping for a minute'
-    sleep(60)
-
-    # Add the list to the email
-    add_list_to_email(email_list_name, marketing_email_name)
-
-    print 'sleeping for a minute'
-    sleep(60)
-
-    # Confirm that we should actually send it now
-    if raw_input('> Email ready to send. Would you like to send now? [Y/n]: ').lower() != 'y':
-        exit()
-
-    # Send the email
-    send_email(marketing_email_name)
 
 def exit():
     sys.exit(0)

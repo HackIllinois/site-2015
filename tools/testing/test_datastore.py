@@ -6,7 +6,7 @@ from db.Email import Email
 
 class DatastoreTests(DatastoreTestCase, MemcacheHandler):
 
-	def test_add_pass(self):
+	def test_add(self):
 		#Simply adds one email to datastore
 		a = Email.add({"email":"this@is.myemail"})
 		self.assertNotEqual(a, False)
