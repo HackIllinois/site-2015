@@ -19,6 +19,7 @@ class EmailHandler(BaseAdminHandler):
         # make a secure connection to SendGrid
         sg = SendGridClient(constants.SENDGRID_API_USER, constants.SENDGRID_API_KEY, secure=True)
 
+        #TODO: write parcer to get stats on email statused (ex. sent open ext...) and category
         message = Mail()
         message.set_subject('message subject')
         message.set_html('This is just a test')
