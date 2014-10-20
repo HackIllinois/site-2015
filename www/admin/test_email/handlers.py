@@ -30,4 +30,3 @@ class EmailHandler(BaseAdminHandler):
 
         # use the Web API to send your message
         sg.send(message)
-
