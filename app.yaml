@@ -33,8 +33,8 @@ handlers:
   static_dir: assets
 
 - url: /sponsor(s?)(/?)
-  static_files: assets/HackIllinois Sponsorship.pdf
-  upload: assets/HackIllinois Sponsorship\.pdf
+  static_files: assets/HackIllinois Sponsorship 2015.pdf
+  upload: assets/HackIllinois Sponsorship 2015\.pdf
 
 #https://developers.google.com/appengine/articles/python/recording_exceptions_with_ereporter
 - url: /_ereporter.*
