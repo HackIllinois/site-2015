@@ -1,7 +1,7 @@
 #https://developers.google.com/appengine/docs/python/config/appconfig
-application: hackillinois-dev
+application: hackillinois
 module: default
-version: 2-0-2
+version: 2-0-11
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -35,6 +35,10 @@ handlers:
 - url: /sponsor(s?)(/?)
   static_files: assets/HackIllinois Sponsorship 2015.pdf
   upload: assets/HackIllinois Sponsorship 2015\.pdf
+
+- url: /sponsor(s?)/(?i)api
+  static_files: assets/HackIllinois Sponsorship API 2015.pdf
+  upload: assets/HackIllinois Sponsorship API 2015\.pdf
 
 #https://developers.google.com/appengine/articles/python/recording_exceptions_with_ereporter
 - url: /_ereporter.*

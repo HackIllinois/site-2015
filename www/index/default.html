@@ -1,18 +1,18 @@
 {% extends "base/base.html" %}
 {% block head_css %}
-        <link rel="stylesheet" type="text/css" href="css/splash.css">
+        <link rel="stylesheet" type="text/css" href="/css/splash.css">
 {%- endblock %}
 {% block body %}
         <div class="container-main">
             <div class="bg-waves">
                 <ul id="scene">
-                    <li class="layer" id="waves" data-depth="0.2"><object type="image/svg+xml" data="assets/map_wave_outlines.svg"></object></li>
+                    <li class="layer" id="waves" data-depth="0.2"><object type="image/svg+xml" data="/assets/map_wave_outlines.svg"></object></li>
                 </ul>
             </div>
             <div class="bg-land">
                 <div class="content">
                     <div class="logo">
-                        <img src="assets/hackillinois_logo_blue.png">
+                        <img src="/assets/hackillinois_logo_blue.png">
                         <h2>Hack<br>Illinois</h2>
                     </div>
                     <p class="tag">Find your inner explorer</p>
@@ -32,7 +32,7 @@
         </div>
 {%- endblock %}
 {% block body_js %}
-        <script src="js/parallax.min.js"></script>
-        <script src="js/waves.js"></script>
-        <script src="js/index/email.js"></script>
+        <script src="/js/parallax.min.js"></script>
+        <script src="/js/waves.js"></script>
+        <script src="/js/index/email.js"></script>
 {%- endblock %}
