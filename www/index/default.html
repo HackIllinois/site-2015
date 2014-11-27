@@ -23,6 +23,7 @@
                         <p class="error_message info_text" {% if indatabase or invalid%}style="display:block"{% endif %}>{% if indatabase%}You've already registered this email!{% endif %}{% if invalid%}Please enter a valid email{% endif %}</p>
                         <input type="text" name="email" id="email"{% if indatabase or invalid%}class="error"{% endif %} value="{{user_email}}" placeholder="future-explorer@arctic.com">
                         <button id="email_submit">Submit</button>
+                        <a href="/sponsor"><div id="sponsor">Sponsorship Information</div></a>
                     </form>
                     <div id="thank_you" {% if success%}style="display:block"{% endif %}>
                         <h3>The Adventure Awaits!</h3>
